@@ -1,0 +1,7 @@
+world
+libraries
+logs
+versions
+*.zip
+usercache.json
+*.log
