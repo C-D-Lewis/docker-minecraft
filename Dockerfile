@@ -18,7 +18,6 @@ EXPOSE 25565/tcp
 
 WORKDIR /server
 
-ADD ./server .
-ADD ./scripts/start.sh .
+ADD . .
 
-CMD ["/server/start.sh"]
+CMD ["/server/scripts/start.sh"]
