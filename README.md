@@ -75,7 +75,7 @@ docker stop $CONTAINER_ID
 Backup manually to `docker-minecraft.zip` and copy somewhere safe:
 
 ```
-sudo ./scripts/create-zip.sh $USER
+sudo ./scripts/local-backup.sh $USER
 ```
 
 Add the `local-backup.sh` script to crontab to run once a day and copy a file

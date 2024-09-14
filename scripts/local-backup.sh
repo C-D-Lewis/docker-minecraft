@@ -2,6 +2,8 @@
 
 set -eu
 
+USR=$1
+
 ROOT_DIR="/mnt/ssd/docker-minecraft"
 OUT_DIR="/mnt/ssd/backup/"
 DAY_OF_WEEK=$(date +'%A')
@@ -18,7 +20,7 @@ fi
 
 cd $ROOT_DIR
 
-./scripts/create-zip.sh
+./scripts/create-zip.sh $USR
 mv "docker-minecraft.zip" "$OUTPUT_FILE"
 
 echo ">>> Moving"
