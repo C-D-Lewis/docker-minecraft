@@ -7,8 +7,6 @@ RUN apt install -y curl
 WORKDIR /opt
 ADD ./scripts/install-platform-java.sh .
 RUN ./install-platform-java.sh
-RUN tar -xzf java.tar.gz
-RUN update-alternatives --install /usr/bin/java java /opt/jdk-22.0.2/bin/java 1
 
 ################################################################
 
