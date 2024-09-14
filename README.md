@@ -43,7 +43,7 @@ Change the amount of memory allocated in `scripts/start.sh` to be no more than
 
 ## Docker build and run
 
-```
+```shell
 ./scripts/start-docker.sh
 ```
 
@@ -74,7 +74,7 @@ docker stop $CONTAINER_ID
 
 Backup manually to `docker-minecraft.zip` and copy somewhere safe:
 
-```
+```shell
 sudo ./scripts/local-backup.sh $USER
 ```
 
@@ -99,7 +99,7 @@ npm i
 
 Run the monitor with AWS credentials that can update Route53 records:
 
-```
+```shell
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 
