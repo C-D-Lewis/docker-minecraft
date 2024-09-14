@@ -4,6 +4,7 @@ Standalone Docker-based Minecraft server setup with backups and DNS record
 management, primarily for Raspberry Pi 5 with 4+ GB of RAM.
 
 * [Prerequisites](#prerequisites)
+* [Customizations](#customizations)
 * [Docker build and run](#docker-build-and-run)
 * [Stopping the server](#stopping-the-server)
 * [Backups](#backups)
@@ -20,6 +21,25 @@ curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker $USER
 logout
 ```
+
+3. Install Node.js via `nvm`:
+
+```bash
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# Install node 20
+nvm install 20
+nvm alias default 20
+```
+
+## Customizations
+
+Change the server icon, Message of The Day, and more in the `server.properties`
+file.
+
+Change the amount of memory allocated in `scripts/start.sh` to be no more than
+75% available on the system.
 
 ## Docker build and run
 
@@ -52,17 +72,45 @@ docker stop $CONTAINER_ID
 
 ## Backups
 
-Backup manually to `docker-minecraft.zip`:
+Backup manually to `docker-minecraft.zip` and copy somewhere safe:
 
 ```
 sudo ./scripts/create-zip.sh $USER
 ```
 
 Add the `local-backup.sh` script to crontab to run once a day and copy a file
-for each day of the week (7 day rolling backups), for example at 3 AM:
+for each day of the week (7 day rolling backups), for example at 3 AM, to the
+`/mnt/ssd/backups` directory:
 
 ```
 0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
 ```
 
 ## DNS
+
+Use the `scripts/update-dns.sh` script to keep a DNS record pointed at the
+server's public IP address in case it changes.
+
+Install node dependencies:
+
+```
+npm i
+```
+
+Run the monitor with AWS credentials that can update Route53 records:
+
+```
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+
+./scripts/update-dns.sh
+```
+
+Add to crontab to run the monitor on boot:
+
+```
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+
+@reboot sleep 30 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh > /mnt/ssd/docker-minecraft/update-dns.log 2>&1
+```

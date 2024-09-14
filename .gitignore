@@ -5,3 +5,4 @@ versions
 *.zip
 usercache.json
 *.log
+node_modules
