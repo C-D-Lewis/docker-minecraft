@@ -6,7 +6,7 @@ set -eu
 
 USR=$1
 
-OUTPUT_FILE="docker-minecraft.zip"
+OUTPUT_FILE="backup.zip"
 
 echo ">>> Removing zips"
 rm -rf ./*.zip
@@ -15,7 +15,7 @@ echo ">>> Updating ownership"
 chown -R $USR ./
 
 echo ">>> Creating zip"
-zip -r $OUTPUT_FILE .
+zip -r $OUTPUT_FILE . --exclude "*node_modules*" --exclude "*backups*"
 
 size=$(stat -c '%s' $OUTPUT_FILE | numfmt --to=si --suffix=B)
 echo ">>> Size: $size"

@@ -55,10 +55,10 @@ running the server image. For example:
 ```
 
 Add to crontab to run on boot with `sudo crontab -e`, assuming a location of
-`/mnt/ssd/`:
+`/mnt/ssd/`. Make sure the desired server config is included, such as `test`:
 
 ```
-@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh > /mnt/ssd/docker-minecraft/docker-minecraft.log 2>&1
+@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh test > /mnt/ssd/docker-minecraft/docker-minecraft.log 2>&1
 ```
 
 ## Stopping the server

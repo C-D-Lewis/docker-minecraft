@@ -22,7 +22,6 @@ WORKDIR /server
 
 # Copy always
 ADD ./scripts ./scripts
-ADD ./eula.txt .
 
 # Copy server-specific files
 ADD ./config/${CONFIG} .
