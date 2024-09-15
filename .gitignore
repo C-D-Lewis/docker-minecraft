@@ -6,3 +6,12 @@ versions
 usercache.json
 *.log
 node_modules
+
+# Config files
+./banned-ips.json
+./banner-players.json
+./config.json
+./ops.json
+./server*.jar
+./server.properties
+./whitelist.json
