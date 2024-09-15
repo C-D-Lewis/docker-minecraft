@@ -4,7 +4,6 @@ set -eu
 
 USR=$1
 
-ROOT_DIR="/mnt/ssd/docker-minecraft"
 OUT_DIR="/mnt/ssd/backup/"
 DAY_OF_WEEK=$(date +'%A')
 OUTPUT_FILE="docker-minecraft-$DAY_OF_WEEK.zip"
@@ -18,13 +17,12 @@ else
   exit 1
 fi
 
-cd $ROOT_DIR
-
 ./scripts/create-zip.sh $USR
 mv "docker-minecraft.zip" "$OUTPUT_FILE"
 
 echo ">>> Moving"
-rsync --progress $OUTPUT_FILE $OUT_DIR
+mkdir -p backups
+rsync --progress $OUTPUT_FILE ./backups/
 
 echo "$(date)" >> local-backup.log
 echo ">>> Complete"

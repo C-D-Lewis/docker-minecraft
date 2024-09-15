@@ -35,16 +35,23 @@ nvm alias default 20
 
 ## Customizations
 
+For each configured server, the files unique to it are stored in a directory
+in `./config`. This allows the project to build and run multiple servers from
+the same set of scripts.
+
 Change the server icon, Message of The Day, and more in the `server.properties`
 file.
 
-Change the amount of memory allocated in `scripts/start.sh` to be no more than
+Change the amount of memory allocated in `config.json` to be no more than
 75% available on the system.
 
 ## Docker build and run
 
+Choose a set of configuration files from `./config` to use when building and
+running the server image. For example:
+
 ```shell
-./scripts/start-docker.sh
+./scripts/start-docker.sh test
 ```
 
 Add to crontab to run on boot with `sudo crontab -e`, assuming a location of
@@ -83,7 +90,7 @@ for each day of the week (7 day rolling backups), for example at 3 AM, to the
 `/mnt/ssd/backups` directory:
 
 ```
-0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
+0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh pi > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
 ```
 
 ## DNS
