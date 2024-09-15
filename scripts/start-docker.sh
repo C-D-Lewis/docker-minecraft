@@ -2,12 +2,10 @@
 
 set -eu
 
-CONFIG_NAME=$1
-
-NAME=$(cat ./config.json | jq -r ".NAME")
+NAME=$1
 
 # Build the image
-docker build -t $NAME . --build-arg CONFIG=$CONFIG_NAME
+docker build -t $NAME . --build-arg CONFIG=$NAME
 
 # Make sure the world directory exists to mount and persist to
 mkdir -p world
