@@ -3,11 +3,13 @@
 set -eu
 
 USR=$1
-BACKUP_DIR=$2
+SERVER_NAME=$2
+
+LOCAL_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".LOCAL_BACKUP_DIR")
 
 DAY_OF_WEEK=$(date +'%A')
-OUTPUT_FILE="backup-$DAY_OF_WEEK.zip"
-OUTPUT_PATH="$BACKUP_DIR/$OUTPUT_FILE"
+OUTPUT_FILE="$SERVER_NAME-$DAY_OF_WEEK.zip"
+OUTPUT_PATH="$LOCAL_BACKUP_DIR/$OUTPUT_FILE"
 
 # Server must be running successfully
 # if pgrep -x java > /dev/null

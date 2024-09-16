@@ -4,7 +4,8 @@ set -eu
 
 USR=$1
 SERVER_NAME=$2
-S3_BUCKET_DIR=$3
+
+S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
 
 DATE=$(TZ=GMT date +"%Y%m%d")
 OUTPUT_FILE="$SERVER_NAME-$DATE.zip"
@@ -24,11 +25,11 @@ export HOME="${HOME:=/home/$USR}"
 ./scripts/create-zip.sh $USR
 mv "backup.zip" "$OUTPUT_FILE"
 
-echo ">>> Uploading"
-/usr/local/bin/aws s3 cp $OUTPUT_FILE "$S3_BUCKET_DIR/"
+echo ">>> Uploading to $S3_BACKUP_DIR"
+/usr/local/bin/aws s3 cp $OUTPUT_FILE "$S3_BACKUP_DIR/"
 
 echo ">>> Copying to latest"
-/usr/local/bin/aws s3 cp "$S3_BUCKET_DIR/$OUTPUT_FILE" "$S3_BUCKET_DIR/$SERVER_NAME-latest.zip"
+/usr/local/bin/aws s3 cp "$S3_BACKUP_DIR/$OUTPUT_FILE" "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip"
 
 echo ">>> Cleaning up"
 rm -rf $OUTPUT_FILE

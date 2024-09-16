@@ -1,5 +1,7 @@
 {
   "SERVER_NAME": "dengie",
   "JAR": "minecraft-server_1.21.1.jar",
-  "MEMORY": "2G"
+  "MEMORY": "2G",
+  "LOCAL_BACKUP_DIR": "/mnt/ssd/backups",
+  "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds"
 }
