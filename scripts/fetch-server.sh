@@ -2,6 +2,6 @@
 
 set -eu
 
-VERSION=$(cat ./config.json | jq -r ".VERSION")
+JAR=$(cat ./config.json | jq -r ".JAR")
 
-curl "https://s3.amazonaws.com/public-files.chrislewis.me.uk/infra/minecraft-server_$VERSION.jar" -o server.jar
+curl "https://s3.amazonaws.com/public-files.chrislewis.me.uk/infra/$JAR" -o server.jar

@@ -3,6 +3,7 @@
 set -eu
 
 USR=$1
+BACKUP_DIR=$2
 
 DAY_OF_WEEK=$(date +'%A')
 OUTPUT_FILE="backup-$DAY_OF_WEEK.zip"
@@ -19,9 +20,7 @@ OUTPUT_FILE="backup-$DAY_OF_WEEK.zip"
 ./scripts/create-zip.sh $USR
 
 echo ">>> Moving"
-mkdir -p backups
-rsync --progress backup.zip "./backups/$OUTPUT_FILE"
+mv backup.zip "$BACKUP_DIR/$OUTPUT_FILE"
 
-rm backup.zip
 echo "$(date)" >> local-backup.log
 echo ">>> Complete"

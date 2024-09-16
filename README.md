@@ -22,17 +22,6 @@ sudo usermod -aG docker $USER
 logout
 ```
 
-3. Install Node.js via `nvm`:
-
-```bash
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-# Install node 20
-nvm install 20
-nvm alias default 20
-```
-
 ## Customizations
 
 For each configured server, the files unique to it are stored in a directory
@@ -79,10 +68,12 @@ docker stop $CONTAINER_ID
 
 ## Backups
 
+### Local
+
 Backup manually to `docker-minecraft.zip` and copy somewhere safe:
 
 ```shell
-sudo ./scripts/local-backup.sh $USER
+sudo ./scripts/local-backup.sh $USER $BACKUP_DIR
 ```
 
 Add the `local-backup.sh` script to crontab to run once a day and copy a file
@@ -90,13 +81,38 @@ for each day of the week (7 day rolling backups), for example at 3 AM, to the
 `/mnt/ssd/backups` directory:
 
 ```
-0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh pi > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
+0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh pi /mnt/ssd/backups > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
+```
+
+### S3 Remote
+
+Upload a backup to an AWS S3 bucket that you have credentials to use:
+
+```shell
+sudo ./scripts/upload-backup.sh $USER $SERVER_NAME $S3_BUCKET_DIR
+```
+
+For example:
+
+```shell
+sudo ./scripts/upload-backup.sh pi test s3://my-bucket/worlds
 ```
 
 ## DNS
 
 Use the `scripts/update-dns.sh` script to keep a DNS record pointed at the
 server's public IP address in case it changes.
+
+Install Node.js via `nvm`:
+
+```shell
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+# Install node 20
+nvm install 20
+nvm alias default 20
+```
 
 Install node dependencies:
 

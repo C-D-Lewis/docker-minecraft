@@ -1,5 +1,5 @@
 {
-  "NAME": "dengie",
-  "VERSION": "1.21.1",
+  "SERVER_NAME": "dengie",
+  "JAR": "minecraft-server_1.21.1.jar",
   "MEMORY": "2G"
 }

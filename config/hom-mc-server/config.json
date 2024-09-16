@@ -1,0 +1,5 @@
+{
+  "SERVER_NAME": "hom-mc-server",
+  "JAR": "minecraft-server_1.21.1.jar",
+  "MEMORY": "5G"
+}
