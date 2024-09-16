@@ -70,15 +70,20 @@ docker stop $CONTAINER_ID
 
 ### Local
 
-Backup manually to `docker-minecraft.zip` and copy somewhere safe:
+Backup manually and copy somewhere safe:
 
 ```shell
-sudo ./scripts/local-backup.sh $USER $BACKUP_DIR
+sudo ./scripts/local-backup.sh $USER $SERVER_NAME
+```
+
+For example:
+
+```shell
+sudo ./scripts/local-backup.sh pi test
 ```
 
 Add the `local-backup.sh` script to crontab to run once a day and copy a file
-for each day of the week (7 day rolling backups), for example at 3 AM, to the
-`/mnt/ssd/backups` directory:
+for each day of the week (7 day rolling backups), for example at 3 AM:
 
 ```
 0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh pi hom-mc-server > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
