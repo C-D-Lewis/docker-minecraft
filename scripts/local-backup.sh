@@ -7,6 +7,7 @@ BACKUP_DIR=$2
 
 DAY_OF_WEEK=$(date +'%A')
 OUTPUT_FILE="backup-$DAY_OF_WEEK.zip"
+OUTPUT_PATH="$BACKUP_DIR/$OUTPUT_FILE"
 
 # Server must be running successfully
 # if pgrep -x java > /dev/null
@@ -19,8 +20,8 @@ OUTPUT_FILE="backup-$DAY_OF_WEEK.zip"
 
 ./scripts/create-zip.sh $USR
 
-echo ">>> Moving"
-mv backup.zip "$BACKUP_DIR/$OUTPUT_FILE"
+echo ">>> Moving to $OUTPUT_PATH"
+mv backup.zip $OUTPUT_PATH
 
 echo "$(date)" >> local-backup.log
 echo ">>> Complete"

@@ -98,6 +98,12 @@ For example:
 sudo ./scripts/upload-backup.sh pi test s3://my-bucket/worlds
 ```
 
+Add to crontab for weekly backups (4AM Monday):
+
+```
+0 4 * * 1 cd /mnt/ssd/docker-minecraft && ./scripts/upload-backup.sh pi test s3://my-bucket/worlds > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
+```
+
 ## DNS
 
 Use the `scripts/update-dns.sh` script to keep a DNS record pointed at the
