@@ -131,14 +131,14 @@ Install node dependencies:
 npm i
 ```
 
-Run the monitor with AWS credentials that can update Route53 records, specifying
-the subdomain to use:
+Run the monitor with AWS credentials that can update Route53 records, server
+config to use:
 
 ```shell
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 
-./scripts/update-dns.sh $SUBDOMAIN
+./scripts/update-dns.sh $SERVER_NAME
 ```
 
 Add to crontab to run the monitor on boot:
@@ -147,5 +147,5 @@ Add to crontab to run the monitor on boot:
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
-@reboot sleep 30 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh minecraft > /mnt/ssd/docker-minecraft/update-dns.log 2>&1
+@reboot sleep 30 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /mnt/ssd/docker-minecraft/update-dns.log 2>&1
 ```

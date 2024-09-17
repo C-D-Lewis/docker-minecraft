@@ -2,7 +2,9 @@
 
 set -eu
 
-DNS_SUBDOMAIN=$1
+SERVER_NAME=$1
+
+DNS_SUBDOMAIN=$(cat ./config/$SERVER_NAME/config.json | jq -r ".DNS_SUBDOMAIN")
 
 # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required with Route53 update permissions
 echo "Using credentials $AWS_ACCESS_KEY_ID / $AWS_SECRET_ACCESS_KEY"
