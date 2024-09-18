@@ -4,5 +4,6 @@
   "MEMORY": "2G",
   "LOCAL_BACKUP_DIR": "/home/chrislewis/code/docker-minecraft/backups",
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
-  "DNS_SUBDOMAIN": ""
+  "DNS_SUBDOMAIN": "",
+  "PORT": "25565"
 }
