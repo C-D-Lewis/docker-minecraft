@@ -3,7 +3,7 @@
   "_JAR": "minecraft-server_1.21.1.jar",
   "JAR": "spigot-1.21.1.jar",
   "MEMORY": "3G",
-  "LOCAL_BACKUP_DIR": "/mnt/ssd/backups",
+  "LOCAL_BACKUP_DIR": "/home/pi/backups",
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
   "DNS_SUBDOMAIN": "dengie-mc",
   "PORT": "25566"

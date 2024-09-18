@@ -36,6 +36,10 @@ Change the amount of memory allocated in `config.json` to be no more than
 
 ## Docker build and run
 
+> Once running, all files changed in the container except the mounted `/world`
+> directory will be lost when the container exits. Use
+> `docker exec -t -i $CONTAINER_ID /bin/bash` to explore and copy files out.
+
 Choose a set of configuration files from `./config` to use when building and
 running the server image. For example:
 
