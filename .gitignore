@@ -24,3 +24,4 @@ config/dengie/plugins/CraftableSaddles
 config/dengie/plugins/PluginMetrics
 config/dengie/plugins/bStats
 config/dengie/plugins/dynmap
+config/dengie/plugins/TreeFeller
