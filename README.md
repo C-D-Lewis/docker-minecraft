@@ -95,6 +95,8 @@ for each day of the week (7 day rolling backups), for example at 3 AM:
 
 ### S3 Remote
 
+> Requires the AWS CLI.
+
 Upload a backup to an AWS S3 bucket that you have credentials to use:
 
 ```shell
