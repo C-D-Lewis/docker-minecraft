@@ -1,2 +1,4 @@
-**/world
+**/world*
 *.zip
+
+config/**/plugins/*

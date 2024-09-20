@@ -12,5 +12,16 @@ docker build -t $SERVER_NAME . --build-arg CONFIG=$SERVER_NAME
 # Make sure the world directory exists to mount and persist to
 mkdir -p world
 
-# Run the image with exposed port and mounted world directory, and dynmap port
-docker run --rm -p $PORT:$PORT -p 8123:8123 -v ./world:/server/world -t $SERVER_NAME
+# Run the image with exposed:
+# - Minecraft server port
+# - Dynmap port
+# - Mounted world directory (some for Spigot servers too)
+# - Any spigot plugins and associated data
+docker run --rm \
+  -p $PORT:$PORT \
+  -p 8123:8123 \
+  -v ./world:/server/world \
+  -v ./world_nether:/server/world_nether \
+  -v ./world_the_end:/server/world_the_end \
+  -v ./config/$SERVER_NAME/plugins:/server/plugins \
+  -t $SERVER_NAME

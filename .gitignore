@@ -1,4 +1,4 @@
-world
+world*
 libraries
 logs
 versions
@@ -6,7 +6,6 @@ versions
 usercache.json
 *.log
 node_modules
-
 backups
 
 # Config files
@@ -17,3 +16,11 @@ backups
 ./server*.jar
 ./server.properties
 ./whitelist.json
+
+# Files inside a Spigot server mounted plugins directory
+# Need a better solution really
+config/dengie/plugins/ChestLock
+config/dengie/plugins/CraftableSaddles
+config/dengie/plugins/PluginMetrics
+config/dengie/plugins/bStats
+config/dengie/plugins/dynmap
