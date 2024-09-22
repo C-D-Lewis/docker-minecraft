@@ -113,6 +113,9 @@ sudo ./scripts/upload-backup.sh pi test
 Add to crontab for weekly backups (4AM Monday):
 
 ```
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+
 0 4 * * 1 cd /mnt/ssd/docker-minecraft && ./scripts/upload-backup.sh pi test > /mnt/ssd/docker-minecraft/upload-backup.log 2>&1
 ```
 
