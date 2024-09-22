@@ -15,7 +15,7 @@ echo ">>> Updating ownership"
 chown -R $USR ./
 
 echo ">>> Creating zip"
-zip -r $OUTPUT_FILE . --exclude "*node_modules*" --exclude "*backups*" --exclude "*dynmap*"
+zip -r $OUTPUT_FILE . --exclude "*node_modules*" --exclude "*backups*" --exclude "*plugins*"
 
 size=$(stat -c '%s' $OUTPUT_FILE | numfmt --to=si --suffix=B)
 echo ">>> Size: $size"
