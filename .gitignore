@@ -19,9 +19,9 @@ backups
 
 # Files inside a Spigot server mounted plugins directory
 # Need a better solution really
-config/dengie/plugins/ChestLock
-config/dengie/plugins/CraftableSaddles
-config/dengie/plugins/PluginMetrics
-config/dengie/plugins/bStats
-config/dengie/plugins/dynmap
-config/dengie/plugins/TreeFeller
+config/**/plugins/ChestLock
+config/**/plugins/CraftableSaddles
+config/**/plugins/PluginMetrics
+config/**/plugins/bStats
+config/**/plugins/dynmap
+config/**/plugins/TreeFeller
