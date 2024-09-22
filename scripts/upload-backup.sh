@@ -34,5 +34,6 @@ echo ">>> Copying to latest"
 echo ">>> Cleaning up"
 rm -rf $OUTPUT_FILE
 
-echo "$(date)" >> upload-backup.log
+# Done in crontab as per examples
+# echo "$(date)" >> upload-backup.log
 echo ">>> Complete"
