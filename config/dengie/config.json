@@ -1,6 +1,5 @@
 {
   "SERVER_NAME": "dengie",
-  "_JAR": "minecraft-server_1.21.1.jar",
   "JAR": "spigot-1.21.1.jar",
   "MEMORY": "3G",
   "LOCAL_BACKUP_DIR": "/home/pi/backups",
