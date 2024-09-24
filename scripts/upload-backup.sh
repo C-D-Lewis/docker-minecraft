@@ -5,6 +5,10 @@ set -eu
 USR=$1
 SERVER_NAME=$2
 
+if [ ! -d "./config/$SERVER_NAME" ]; then
+  echo "Invalid SERVER_NAME"
+  exit 1
+fi
 S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
 
 DATE=$(TZ=GMT date +"%Y%m%d")

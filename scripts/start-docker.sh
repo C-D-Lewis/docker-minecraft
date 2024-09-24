@@ -4,6 +4,10 @@ set -eu
 
 SERVER_NAME=$1
 
+if [ ! -d "./config/$SERVER_NAME" ]; then
+  echo "Invalid SERVER_NAME"
+  exit 1
+fi
 PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".PORT")
 
 # Build the image

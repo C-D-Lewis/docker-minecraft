@@ -14,13 +14,13 @@ management, primarily for Raspberry Pi 5 with 4+ GB of RAM.
 
 1. Install this repo to a fast SSD located at `/mnt/ssd`.
 
-2. Install Docker and add the user to the docker group:
+2. Install [Docker](https://docs.docker.com/engine/install/debian/) for aarch64.
 
-```
-curl -sSL https://get.docker.com | sh
-sudo usermod -aG docker $USER
-logout
-```
+Optionally, for supporting scripts:
+
+3. Install AWS CLI v2.
+
+4. Install node 20 with `nvm`.
 
 ## Customizations
 

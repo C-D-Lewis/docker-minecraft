@@ -4,6 +4,10 @@ set -eu
 
 SERVER_NAME=$1
 
+if [ ! -d "./config/$SERVER_NAME" ]; then
+  echo "Invalid SERVER_NAME"
+  exit 1
+fi
 S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
 
 read -p "WARNING: This will erase local world directory and replace with latest from S3 (y/n)?" CONT

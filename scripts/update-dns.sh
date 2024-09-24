@@ -4,6 +4,10 @@ set -eu
 
 SERVER_NAME=$1
 
+if [ ! -d "./config/$SERVER_NAME" ]; then
+  echo "Invalid SERVER_NAME"
+  exit 1
+fi
 DNS_SUBDOMAIN=$(cat ./config/$SERVER_NAME/config.json | jq -r ".DNS_SUBDOMAIN")
 
 # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required with Route53 update permissions
