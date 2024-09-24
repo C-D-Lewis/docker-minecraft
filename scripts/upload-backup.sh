@@ -2,8 +2,8 @@
 
 set -eu
 
-USR=$1
-SERVER_NAME=$2
+SERVER_NAME=$1
+USR=$2
 
 if [ ! -d "./config/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
