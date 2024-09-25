@@ -25,3 +25,5 @@ config/**/plugins/PluginMetrics
 config/**/plugins/bStats
 config/**/plugins/dynmap
 config/**/plugins/TreeFeller
+config/**/plugins/CMILib
+config/**/plugins/BottledExp

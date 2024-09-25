@@ -23,9 +23,14 @@ echo ">>> Downloading from S3"
 
 echo ">>> Unzipping world"
 unzip $SERVER_NAME-latest.zip -d ./temp
+
+echo ">>> Copying worlds"
 cp -r ./temp/world .
 cp -r ./temp/world_nether . || true
 cp -r ./temp/world_the_end . || true
+
+echo ">>> Copying plugin data"
+cp -r "./temp/config/$SERVER_NAME/plugins" "./config/$SERVER_NAME/" || true
 
 echo ">>> Cleaning up"
 rm -rf ./temp
