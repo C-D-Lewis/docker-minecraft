@@ -1,7 +1,7 @@
 {
   "SERVER_NAME": "hom-mc-server",
   "JAR": "minecraft-server_1.21.1.jar",
-  "MEMORY": "5G",
+  "MEMORY": "4G",
   "LOCAL_BACKUP_DIR": "/mnt/usb/backups",
   "S3_BACKUP_DIR": "s3://hom-mc-server/backups",
   "DNS_SUBDOMAIN": "",
