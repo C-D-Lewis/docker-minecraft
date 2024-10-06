@@ -52,12 +52,12 @@ Add to crontab to run on boot with `sudo crontab -e`, assuming a location of
 `/mnt/ssd/`. Make sure the desired server config is included, such as `test`:
 
 ```
-@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh test > /mnt/ssd/docker-minecraft/docker-minecraft.log 2>&1
+@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh test >> /home/pi/docker-minecraft.log 2>&1
 ```
 
 ## Stopping the server
 
-To safely stop the server, log in as an Op user and run the `/exit` command.
+To safely stop the server, log in as an Op user and run the `/stop` command.
 
 If not possible, force-stop the container:
 
@@ -78,20 +78,14 @@ docker stop $CONTAINER_ID
 Backup manually and copy somewhere safe:
 
 ```shell
-sudo ./scripts/local-backup.sh $USER $SERVER_NAME
-```
-
-For example:
-
-```shell
-sudo ./scripts/local-backup.sh pi test
+sudo ./scripts/local-backup.sh $SERVER_NAME $USER
 ```
 
 Add the `local-backup.sh` script to crontab to run once a day and copy a file
 for each day of the week (7 day rolling backups), for example at 3 AM:
 
 ```
-0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh pi hom-mc-server > /mnt/ssd/docker-minecraft/local-backup.log 2>&1
+0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh test pi > /home/pi/local-backup.log 2>&1
 ```
 
 ### S3 Remote
@@ -101,22 +95,16 @@ for each day of the week (7 day rolling backups), for example at 3 AM:
 Upload a backup to an AWS S3 bucket that you have credentials to use:
 
 ```shell
-sudo ./scripts/upload-backup.sh $USER $SERVER_NAME
+sudo ./scripts/upload-backup.sh $SERVER_NAME $USER
 ```
 
-For example:
-
-```shell
-sudo ./scripts/upload-backup.sh pi test
-```
-
-Add to crontab for weekly backups (4AM Monday):
+Add to crontab for weekly backups (4AM Monday) with your AWS credentials:
 
 ```
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
-0 4 * * 1 cd /mnt/ssd/docker-minecraft && ./scripts/upload-backup.sh pi test > /mnt/ssd/docker-minecraft/upload-backup.log 2>&1
+0 4 * * 1 cd /mnt/ssd/docker-minecraft && ./scripts/upload-backup.sh test pi > /home/pi/upload-backup.log 2>&1
 ```
 
 ## DNS
@@ -157,5 +145,5 @@ Add to crontab to run the monitor on boot:
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
-@reboot sleep 30 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /mnt/ssd/docker-minecraft/update-dns.log 2>&1
+@reboot sleep 30 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /home/pi/update-dns.log 2>&1
 ```
