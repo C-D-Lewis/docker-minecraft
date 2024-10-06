@@ -2,8 +2,8 @@
   "SERVER_NAME": "test",
   "JAR": "minecraft-server_1.21.1.jar",
   "MEMORY": "2G",
-  "LOCAL_BACKUP_DIR": "/home/chrislewis/code/docker-minecraft/backups",
+  "LOCAL_BACKUP_DIR": "/home/chrislewis/backups",
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
-  "DNS_SUBDOMAIN": "",
+  "DNS_SUBDOMAIN": "test",
   "PORT": "25565"
 }

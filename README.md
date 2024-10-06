@@ -145,5 +145,5 @@ Add to crontab to run the monitor on boot:
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
-@reboot sleep 30 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /home/pi/update-dns.log 2>&1
+@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /home/pi/update-dns.log 2>&1
 ```
