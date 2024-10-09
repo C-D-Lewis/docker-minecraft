@@ -18,6 +18,7 @@ OUTPUT_PATH="$LOCAL_BACKUP_DIR/$OUTPUT_FILE"
 ./scripts/create-zip.sh $USR
 
 echo ">>> Moving to $OUTPUT_PATH"
+mkdir -p LOCAL_BACKUP_DIR || true
 mv backup.zip $OUTPUT_PATH
 
 echo "$(date)" >> local-backup.log
