@@ -8,7 +8,7 @@ usercache.json
 node_modules
 backups
 
-# Config files
+# Config files (per server)
 ./banned-ips.json
 ./banner-players.json
 ./config.json
@@ -17,7 +17,10 @@ backups
 ./server.properties
 ./whitelist.json
 
-# Files inside a Spigot server mounted plugins directory
+# Paper
+config/**/plugins/.paper-remapped
+
+# Files inside a server mounted plugins directory
 # Need a better solution really
 config/**/plugins/ChestLock
 config/**/plugins/CraftableSaddles
@@ -25,6 +28,7 @@ config/**/plugins/PluginMetrics
 config/**/plugins/bStats
 config/**/plugins/CMILib
 config/**/plugins/WorldEdit
+config/**/plugins/spark
 
 config/**/plugins/dynmap/colorschemes
 config/**/plugins/dynmap/custom-lightings.txt
@@ -46,7 +50,6 @@ config/**/plugins/dynmap/web
 config/**/plugins/dynmap/world.pending
 config/**/plugins/dynmap/world_nether.pending
 config/**/plugins/dynmap/worlds.txt
-
 
 config/**/plugins/BottledExp/blocks.yml
 config/**/plugins/BottledExp/Translations
