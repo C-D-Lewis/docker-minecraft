@@ -1,5 +1,5 @@
 regions:
-    enable: false
+    enable: true
     uuid-migration:
         perform-on-next-start: false
         keep-names-that-lack-uuids: true
@@ -15,12 +15,12 @@ regions:
     high-frequency-flags: false
     protect-against-liquid-flow: false
     wand: minecraft:leather
-    max-claim-volume: 30000
+    max-claim-volume: 300000
     claim-only-inside-existing-regions: false
     set-parent-on-claim: ''
     location-flags-only-inside-regions: false
     max-region-count-per-player:
-        default: 7
+        default: 1
 auto-invincible: false
 auto-invincible-group: false
 auto-no-drowning-group: false
