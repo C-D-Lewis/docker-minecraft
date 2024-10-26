@@ -20,7 +20,7 @@ regions:
     set-parent-on-claim: ''
     location-flags-only-inside-regions: false
     max-region-count-per-player:
-        default: 1
+        default: 5
 auto-invincible: false
 auto-invincible-group: false
 auto-no-drowning-group: false
