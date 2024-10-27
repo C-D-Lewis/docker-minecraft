@@ -62,3 +62,9 @@ config/**/plugins/ImageFrame/players
 
 config/**/plugins/WorldGuard/cache
 config/**/plugins/WorldGuard/worlds
+
+config/**/plugins/LuckPerms/libs
+config/**/plugins/LuckPerms/translations
+config/**/plugins/LuckPerms/yaml-storage
+config/**/plugins/LuckPerms/contexts.json
+config/**/plugins/LuckPerms/*.db
