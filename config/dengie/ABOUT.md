@@ -24,7 +24,7 @@ Supporting plugins:
 
 ## Group permissions
 
-* `players`
+* `default`
   * `bottledexp.*`
   * `chestlock.*`
   * `imageframe.create`

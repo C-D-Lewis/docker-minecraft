@@ -1,0 +1,7 @@
+uuid: d89c37c3-fde1-4732-88a2-92712cf0ec84
+name: MKU
+primary-group: default
+permissions:
+- luckperms.*
+parents:
+- default

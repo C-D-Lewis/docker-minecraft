@@ -1,0 +1,15 @@
+name: default
+permissions:
+- bottledexp.*
+- chestlock.*
+- mobleash.*
+- treefeller.*
+- imageframe.clone
+- imageframe.create
+- imageframe.get
+- imageframe.info
+- imageframe.list
+- imageframe.marker
+- imageframe.refresh
+- imageframe.rename
+- imageframe.select
