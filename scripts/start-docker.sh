@@ -22,6 +22,7 @@ mkdir -p world
 # - Mounted world directory (some for Spigot servers too)
 # - Any spigot plugins and associated data
 docker run --rm \
+  --name $SERVER_NAME \
   -p $PORT:$PORT \
   -p 8123:8123 \
   -v ./world:/server/world \
