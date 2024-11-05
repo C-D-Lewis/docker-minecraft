@@ -113,7 +113,7 @@ player-damage:
     disable-death-messages: false
 crops:
     disable-creature-trampling: false
-    disable-player-trampling: false
+    disable-player-trampling: true
 turtle-egg:
     disable-creature-trampling: false
     disable-player-trampling: false
