@@ -52,8 +52,10 @@ Add to crontab to run on boot with `sudo crontab -e`, assuming a location of
 `/mnt/ssd/`. Make sure the desired server config is included, such as `test`:
 
 ```
-@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh test >> /home/pi/docker-minecraft.log 2>&1
+@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh test
 ```
+
+Logs will be stored in `docker-minecraft.log`.
 
 ## Stopping the server
 

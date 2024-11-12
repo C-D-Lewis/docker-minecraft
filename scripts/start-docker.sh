@@ -29,4 +29,4 @@ docker run --rm \
   -v ./world_nether:/server/world_nether \
   -v ./world_the_end:/server/world_the_end \
   -v ./config/$SERVER_NAME/plugins:/server/plugins \
-  -t $SERVER_NAME
+  -t $SERVER_NAME >> docker-minecraft.log 2>&1
