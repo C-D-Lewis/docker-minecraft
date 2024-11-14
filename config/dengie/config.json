@@ -2,7 +2,7 @@
   "SERVER_NAME": "dengie",
   "JAR": "paper-1.21.1.jar",
   "MEMORY": "3G",
-  "LOCAL_BACKUP_DIR": "/mnt/nvme/backups",
+  "LOCAL_BACKUP_DIR": "/mnt/nvme2/backups",
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
   "DNS_SUBDOMAIN": "dengie-mc",
   "PORT": "25566"
