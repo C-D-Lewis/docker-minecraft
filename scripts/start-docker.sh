@@ -24,7 +24,7 @@ mkdir -p world
 docker run --rm \
   --name $SERVER_NAME \
   -p $PORT:$PORT \
-  -p 8123:8123 \
+  -p 8321:8321 \
   -v ./world:/server/world \
   -v ./world_nether:/server/world_nether \
   -v ./world_the_end:/server/world_the_end \

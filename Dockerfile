@@ -21,7 +21,7 @@ EXPOSE 25565/tcp
 # Alternative port
 EXPOSE 25566/tcp
 # Dynmap
-EXPOSE 8123/tcp
+EXPOSE 8321/tcp
 
 WORKDIR /server
 
