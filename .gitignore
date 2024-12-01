@@ -30,6 +30,7 @@ config/**/plugins/CMILib
 config/**/plugins/WorldEdit
 config/**/plugins/spark
 config/**/plugins/TabTPS
+config/**/plugins/TodoList
 
 config/**/plugins/dynmap/colorschemes
 config/**/plugins/dynmap/custom-lightings.txt
