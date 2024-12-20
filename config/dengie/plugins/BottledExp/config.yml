@@ -7,7 +7,7 @@ bottle:
   xpCost: 10
   # How much player will get xp from xp bottle
   # Default value: 8
-  # Having this value lower than xpCost will mean that players will loose some amount of exp while converting, which can help out in preventing mindless conversions or posible exploits with other plugins which could give out extra exp
+  # Having this value lower than xpCost will mean that players will loose some amount of exp while converting, which can help out in preventing mindless conversions or possible exploits with other plugins which could give out extra exp
   xpEarn: 10
   # Do you want to use custom items when converting xp to xp bottles
   useItems: true
