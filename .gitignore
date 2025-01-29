@@ -22,7 +22,6 @@ config/**/plugins/.paper-remapped
 
 # Files inside a server mounted plugins directory
 # Need a better solution really
-config/**/plugins/ChestLock
 config/**/plugins/CraftableSaddles
 config/**/plugins/PluginMetrics
 config/**/plugins/bStats
@@ -31,6 +30,8 @@ config/**/plugins/WorldEdit
 config/**/plugins/spark
 config/**/plugins/TabTPS
 config/**/plugins/TodoList
+
+config/**/plugins/ChestLock/locks.yml
 
 config/**/plugins/dynmap/colorschemes
 config/**/plugins/dynmap/custom-lightings.txt
