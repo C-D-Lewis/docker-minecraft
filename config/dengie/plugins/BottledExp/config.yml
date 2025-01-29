@@ -36,7 +36,7 @@ bottle:
     # Minimal amount of exp player needs to have to be able to store it inside bottle
     # Default: 7
     MinimalAmount: 7
-    # Max amount of bottles player can get from store command when prividing desired amount
+    # Max amount of bottles player can get from store command when providing desired amount
     # Default: 2304
     MaxBottles: 2304
   BlockInteraction:
