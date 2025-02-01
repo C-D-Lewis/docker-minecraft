@@ -1,0 +1,59 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 13,
+  "name": "rob",
+  "url": "https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af41723e2-d226-11e9-8d46-8def889b4137?source\u003dnext-article\u0026fit\u003dscale-down\u0026quality\u003dhighest\u0026width\u003d700\u0026dpr\u003d1",
+  "width": 3,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "c0d99f75-8159-4d3e-b329-79777eb45c31",
+  "hasAccess": {},
+  "creationTime": 1728417541656,
+  "mapdata": [
+    {
+      "mapid": 207,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 208,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 209,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 210,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 211,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 212,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 213,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 214,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 215,
+      "image": "8.png",
+      "markers": []
+    }
+  ]
+}

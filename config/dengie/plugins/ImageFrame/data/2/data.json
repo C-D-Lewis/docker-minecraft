@@ -1,0 +1,164 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 2,
+  "name": "chapel",
+  "url": "https://medievalists.gumlet.io/wp-content/uploads/2014/08/Sistine-Chapel.jpg?format\u003dwebp\u0026compress\u003dtrue\u0026quality\u003d80\u0026w\u003d720\u0026dpr\u003d1",
+  "width": 6,
+  "height": 5,
+  "ditheringType": "nearest-color",
+  "creator": "c0d99f75-8159-4d3e-b329-79777eb45c31",
+  "hasAccess": {},
+  "creationTime": 1727477570962,
+  "mapdata": [
+    {
+      "mapid": 108,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 109,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 110,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 111,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 112,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 113,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 114,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 115,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 116,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 117,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 118,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 119,
+      "image": "11.png",
+      "markers": []
+    },
+    {
+      "mapid": 120,
+      "image": "12.png",
+      "markers": []
+    },
+    {
+      "mapid": 121,
+      "image": "13.png",
+      "markers": []
+    },
+    {
+      "mapid": 122,
+      "image": "14.png",
+      "markers": []
+    },
+    {
+      "mapid": 123,
+      "image": "15.png",
+      "markers": []
+    },
+    {
+      "mapid": 124,
+      "image": "16.png",
+      "markers": []
+    },
+    {
+      "mapid": 125,
+      "image": "17.png",
+      "markers": []
+    },
+    {
+      "mapid": 126,
+      "image": "18.png",
+      "markers": []
+    },
+    {
+      "mapid": 127,
+      "image": "19.png",
+      "markers": []
+    },
+    {
+      "mapid": 128,
+      "image": "20.png",
+      "markers": []
+    },
+    {
+      "mapid": 129,
+      "image": "21.png",
+      "markers": []
+    },
+    {
+      "mapid": 130,
+      "image": "22.png",
+      "markers": []
+    },
+    {
+      "mapid": 131,
+      "image": "23.png",
+      "markers": []
+    },
+    {
+      "mapid": 132,
+      "image": "24.png",
+      "markers": []
+    },
+    {
+      "mapid": 133,
+      "image": "25.png",
+      "markers": []
+    },
+    {
+      "mapid": 134,
+      "image": "26.png",
+      "markers": []
+    },
+    {
+      "mapid": 135,
+      "image": "27.png",
+      "markers": []
+    },
+    {
+      "mapid": 136,
+      "image": "28.png",
+      "markers": []
+    },
+    {
+      "mapid": 137,
+      "image": "29.png",
+      "markers": []
+    }
+  ]
+}

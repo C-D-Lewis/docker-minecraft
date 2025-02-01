@@ -1,0 +1,59 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 10,
+  "name": "info",
+  "url": "https://s3.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/intro-sign.png",
+  "width": 3,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1728247361656,
+  "mapdata": [
+    {
+      "mapid": 181,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 182,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 183,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 184,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 185,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 186,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 187,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 188,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 189,
+      "image": "8.png",
+      "markers": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 12,
+  "name": "sk",
+  "url": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcRfhrxKPwvPejipPDUDtl8JBRsgmxXmkMte2XxK4X4YC_3OTjqQQzKM2cDVxXy8P9Lw2f8\u0026usqp\u003dCAU",
+  "width": 2,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1728249064456,
+  "mapdata": [
+    {
+      "mapid": 194,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 195,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 196,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 197,
+      "image": "3.png",
+      "markers": []
+    }
+  ]
+}

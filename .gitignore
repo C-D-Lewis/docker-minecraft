@@ -26,7 +26,6 @@ config/**/plugins/CraftableSaddles
 config/**/plugins/PluginMetrics
 config/**/plugins/bStats
 config/**/plugins/CMILib
-config/**/plugins/WorldEdit
 config/**/plugins/spark
 config/**/plugins/TabTPS
 config/**/plugins/TodoList
@@ -59,14 +58,18 @@ config/**/plugins/BottledExp/Translations
 config/**/plugins/BottledExp/Locale*
 config/**/plugins/BottledExp/recipes.yml
 
-config/**/plugins/ImageFrame/data
-config/**/plugins/ImageFrame/players
-
 config/**/plugins/WorldGuard/cache
 config/**/plugins/WorldGuard/worlds
 
 config/**/plugins/LuckPerms/libs
 config/**/plugins/LuckPerms/translations
-config/**/plugins/LuckPerms/yaml-storage
+config/**/plugins/LuckPerms/yaml-storage/tracks
+config/**/plugins/LuckPerms/yaml-storage/actions.txt
+config/**/plugins/LuckPerms/yaml-storage/uuidcache.txt
 config/**/plugins/LuckPerms/contexts.json
 config/**/plugins/LuckPerms/*.db
+
+config/**/plugins/WorldEdit/.*
+config/**/plugins/WorldEdit/assets
+config/**/plugins/WorldEdit/schematics
+config/**/plugins/WorldEdit/sessions

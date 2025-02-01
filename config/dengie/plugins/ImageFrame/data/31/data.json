@@ -1,0 +1,34 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 31,
+  "name": "buildsign",
+  "url": "https://s3.us-east-1.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/build-sign.png",
+  "width": 4,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1734273778756,
+  "mapdata": [
+    {
+      "mapid": 287,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 288,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 289,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 290,
+      "image": "3.png",
+      "markers": []
+    }
+  ]
+}

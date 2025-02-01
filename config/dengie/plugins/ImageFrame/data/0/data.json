@@ -1,0 +1,19 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 0,
+  "name": "ryan",
+  "url": "https://howoldisryan.com/assets/headshot.png",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1727301255670,
+  "mapdata": [
+    {
+      "mapid": 1,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

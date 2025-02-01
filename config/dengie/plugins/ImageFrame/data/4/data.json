@@ -1,0 +1,59 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 4,
+  "name": "seabers",
+  "url": "https://preview.redd.it/why-on-did-gandalf-not-tell-anyone-in-the-fellowship-that-v0-6lmz1e8jeusa1.jpg?auto\u003dwebp\u0026s\u003d064f54dd46aeb0f810c9b7e45d5ccfe19ca1fe85",
+  "width": 3,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "c0d99f75-8159-4d3e-b329-79777eb45c31",
+  "hasAccess": {},
+  "creationTime": 1727478692064,
+  "mapdata": [
+    {
+      "mapid": 147,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 148,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 149,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 150,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 151,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 152,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 153,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 154,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 155,
+      "image": "8.png",
+      "markers": []
+    }
+  ]
+}

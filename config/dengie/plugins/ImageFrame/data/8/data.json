@@ -1,0 +1,34 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 8,
+  "name": "plunk",
+  "url": "https://i.ibb.co/gVQpc2f/Meta.jpg",
+  "width": 2,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1728236885207,
+  "mapdata": [
+    {
+      "mapid": 173,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 174,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 175,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 176,
+      "image": "3.png",
+      "markers": []
+    }
+  ]
+}

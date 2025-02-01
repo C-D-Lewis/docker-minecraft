@@ -1,0 +1,34 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 11,
+  "name": "gb",
+  "url": "https://i.pinimg.com/564x/4a/ff/83/4aff831996c2e5d0d023497670d5246e.jpg",
+  "width": 2,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1728248012056,
+  "mapdata": [
+    {
+      "mapid": 190,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 191,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 192,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 193,
+      "image": "3.png",
+      "markers": []
+    }
+  ]
+}

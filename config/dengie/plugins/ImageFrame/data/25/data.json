@@ -1,0 +1,59 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 25,
+  "name": "pp",
+  "url": "https://i.ibb.co/YRybT4F/pony.jpg",
+  "width": 3,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1730482111913,
+  "mapdata": [
+    {
+      "mapid": 265,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 266,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 267,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 268,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 269,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 270,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 271,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 272,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 273,
+      "image": "8.png",
+      "markers": []
+    }
+  ]
+}

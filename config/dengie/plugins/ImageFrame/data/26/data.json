@@ -1,0 +1,19 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 26,
+  "name": "msw",
+  "url": "https://i.ibb.co/Hdsz6BC/wedding.jpg",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1730667379561,
+  "mapdata": [
+    {
+      "mapid": 274,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

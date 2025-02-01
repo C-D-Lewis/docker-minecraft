@@ -1,0 +1,19 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 14,
+  "name": "child1",
+  "url": "https://s3.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/child.png",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1728421091855,
+  "mapdata": [
+    {
+      "mapid": 216,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

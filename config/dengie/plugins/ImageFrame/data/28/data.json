@@ -1,0 +1,24 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 28,
+  "name": "mr-sign",
+  "url": "https://s3.us-east-1.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/mrsign.png",
+  "width": 2,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1731175276317,
+  "mapdata": [
+    {
+      "mapid": 276,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 277,
+      "image": "1.png",
+      "markers": []
+    }
+  ]
+}

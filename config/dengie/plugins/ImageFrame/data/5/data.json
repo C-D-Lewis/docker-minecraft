@@ -1,0 +1,19 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 5,
+  "name": "hom",
+  "url": "https://heroesofmirren.com/assets/images/logo-new.png",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1727812044897,
+  "mapdata": [
+    {
+      "mapid": 159,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

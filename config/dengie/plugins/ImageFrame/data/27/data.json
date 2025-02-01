@@ -1,0 +1,19 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 27,
+  "name": "els",
+  "url": "https://i.ibb.co/4gm2SvV/IMG-8783.jpg",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1730667708511,
+  "mapdata": [
+    {
+      "mapid": 275,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 18,
+  "name": "2",
+  "url": "https://i.ibb.co/4P32JDn/2.jpg",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1729284813358,
+  "mapdata": [
+    {
+      "mapid": 247,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

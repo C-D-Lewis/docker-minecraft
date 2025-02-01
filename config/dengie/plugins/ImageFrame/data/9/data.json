@@ -1,0 +1,34 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 9,
+  "name": "kim",
+  "url": "https://media.themoviedb.org/t/p/w235_and_h235_face/85yX3RDu09O4DekBDaI48sF9S2d.jpg",
+  "width": 2,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "3e3168e4-cfb6-459b-a4ae-d46377b56be2",
+  "hasAccess": {},
+  "creationTime": 1728246264606,
+  "mapdata": [
+    {
+      "mapid": 177,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 178,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 179,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 180,
+      "image": "3.png",
+      "markers": []
+    }
+  ]
+}
