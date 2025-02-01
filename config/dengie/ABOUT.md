@@ -3,7 +3,15 @@
 Denie Minecraft Spigot modded server 1.21.1 from
 [BuildTools](https://hub.spigotmc.org/jenkins/job/BuildTools/).
 
-Plugins:
+
+## Datapacks
+
+Datapacks need to be copied to `world/datapacks`.
+
+* [Leash Villager](https://www.curseforge.com/minecraft/texture-packs/leash-villager)
+
+
+## Plugins
 
 * [BottledExp](https://www.spigotmc.org/resources/bottledexp.2815/)
 * [ChestLock](https://www.spigotmc.org/resources/chest-lock-with-automatic-sorting.81204/)
@@ -15,7 +23,8 @@ Plugins:
 * [TreeFeller](https://modrinth.com/plugin/thizzyz-tree-feller)
 * [WorldGuard](https://worldguard.enginehub.org/en/latest/)
 
-Supporting plugins:
+
+## Supporting plugins
 
 * WorldEdit
 * CMILib

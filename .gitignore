@@ -2,7 +2,7 @@
 libraries
 logs
 versions
-*.zip
+/*.zip
 usercache.json
 *.log
 node_modules

@@ -1,7 +1,7 @@
 # docker-minecraft
 
 Standalone Docker-based Minecraft server setup with backups and DNS record
-management, primarily for Raspberry Pi 5 with 4+ GB of RAM.
+management, primarily for Raspberry Pi 5 with 8 GB of RAM.
 
 * [Prerequisites](#prerequisites)
 * [Customizations](#customizations)
@@ -33,6 +33,10 @@ file.
 
 Change the amount of memory allocated in `config.json` to be no more than
 75% available on the system.
+
+Mods for Paper/Bukkit (nominal choice of server) go in `plugins`, and Minecraft
+datapacks go in `datapacks` - if you want them running, copy them to
+`world/datapacks` once a world is created.
 
 ## Docker build and run
 
