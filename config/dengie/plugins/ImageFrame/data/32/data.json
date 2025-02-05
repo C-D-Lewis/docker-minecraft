@@ -1,0 +1,29 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 32,
+  "name": "museum",
+  "url": "https://s3.us-east-1.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/museum.png",
+  "width": 3,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1738707497743,
+  "mapdata": [
+    {
+      "mapid": 308,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 309,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 310,
+      "image": "2.png",
+      "markers": []
+    }
+  ]
+}
