@@ -34,6 +34,6 @@ cp -r "./temp/config/$SERVER_NAME/plugins" "./config/$SERVER_NAME/" || true
 
 echo ">>> Cleaning up"
 rm -rf ./temp
-rm $SERVER_NAME-latest.zip
+#rm $SERVER_NAME-latest.zip
 
 echo ">>> Complete"
