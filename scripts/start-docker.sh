@@ -9,6 +9,7 @@ if [ ! -d "./config/$SERVER_NAME" ]; then
   exit 1
 fi
 PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".PORT")
+DYNMAP_PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".DYNMAP_PORT")
 
 # Build the image
 docker build -t $SERVER_NAME . --build-arg CONFIG=$SERVER_NAME
@@ -18,13 +19,13 @@ mkdir -p world
 
 # Run the image with exposed:
 # - Minecraft server port
-# - Dynmap port
+# - Dynmap port (if specified)
 # - Mounted world directory (some for Spigot servers too)
 # - Any spigot plugins and associated data
 docker run --rm \
   --name $SERVER_NAME \
   -p $PORT:$PORT \
-  -p 8321:8321 \
+  $(if [[ -n "$DYNMAP_PORT" && ${#DYNMAP_PORT} -gt 0 ]]; then echo "-p $DYNMAP_PORT:$DYNMAP_PORT"; fi) \
   -v ./world:/server/world \
   -v ./world_nether:/server/world_nether \
   -v ./world_the_end:/server/world_the_end \
