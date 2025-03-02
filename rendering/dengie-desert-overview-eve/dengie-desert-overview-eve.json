@@ -1,6 +1,6 @@
 {
   "sdfVersion": 9,
-  "name": "dengie-desert-overview",
+  "name": "dengie-desert-overview-eve",
   "width": 1920,
   "height": 1080,
   "yClipMin": -64,
@@ -10,7 +10,7 @@
   "exposure": 1.0,
   "postprocess": "GAMMA",
   "outputMode": "PNG",
-  "renderTime": 1401921,
+  "renderTime": 1575792,
   "spp": 300,
   "sppTarget": 300,
   "rayDepth": 5,
@@ -65,7 +65,7 @@
     }
   },
   "sun": {
-    "altitude": 0.6435011087932844,
+    "altitude": 0.23374318086890142,
     "azimuth": 0.46364760900080615,
     "intensity": 1.25,
     "color": {
