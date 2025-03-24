@@ -14,14 +14,7 @@ RUN java --version || (echo "java was not found" && false)
 FROM platform
 
 ARG CONFIG
-RUN test -n "$CONFIG" || (echo "CONFIG  not set" && false)
-
-# Primary port
-EXPOSE 25565/tcp
-# Alternative port
-EXPOSE 25566/tcp
-# Dynmap
-EXPOSE 8321/tcp
+RUN test -n "$CONFIG" || (echo "CONFIG not set" && false)
 
 WORKDIR /server
 
