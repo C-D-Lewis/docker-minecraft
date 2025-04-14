@@ -19,7 +19,7 @@ zip -r $OUTPUT_FILE . \
   --exclude "*node_modules*" \
   --exclude "*backups*" \
   --exclude "*spark*"  \
-  --exclude "*plugins/dynmap/web/tiles*" \
+  --exclude "*dynmap/web/tiles*" \
   --exclude "./*.zip"
 
 size=$(stat -c '%s' $OUTPUT_FILE | numfmt --to=si --suffix=B)
