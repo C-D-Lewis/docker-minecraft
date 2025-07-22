@@ -7,6 +7,7 @@ usercache.json
 *.log
 node_modules
 backups
+.terraform
 
 # Config files (per server)
 ./banned-ips.json
