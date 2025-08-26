@@ -9,6 +9,7 @@ management, primarily for Raspberry Pi 5 with 8 GB of RAM.
 * [Stopping the server](#stopping-the-server)
 * [Backups](#backups)
 * [DNS](#dns)
+* [AWS Deployment](#aws-deployment)
 
 ## Prerequisites
 
@@ -152,4 +153,24 @@ AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 
 @reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /home/pi/update-dns.log 2>&1
+```
+
+## AWS Deployment
+
+> **Experimental**
+> Image run will lose ALL data once the container exits.
+
+Deploy infrastructure and a Docker image to AWS.
+
+```
+cd terraform
+
+terraform init
+terraform apply
+```
+
+Then push an image to ECR:
+
+```
+./scripts/push-image.sh $SERVER_NAME
 ```
