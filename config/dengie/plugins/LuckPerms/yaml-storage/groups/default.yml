@@ -2,7 +2,6 @@ name: default
 permissions:
 - bottledexp.*
 - chestlock.*
-- mobleash.*
 - treefeller.*
 - imageframe.clone
 - imageframe.create

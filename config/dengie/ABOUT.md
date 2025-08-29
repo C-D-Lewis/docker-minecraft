@@ -18,7 +18,6 @@ Datapacks need to be copied to `world/datapacks`.
 * [Craftable saddles](https://www.spigotmc.org/resources/craftable-saddles.102911/)
 * [Dynmap](https://www.spigotmc.org/resources/dynmap%C2%AE.274/)
 * [ImageFrame](https://www.spigotmc.org/resources/imageframe-load-images-on-maps-item-frames-support-gifs-map-markers-survival-friendly.106031/)
-* [Mobleash](https://www.curseforge.com/minecraft/bukkit-plugins/mobleash) (legacy)
 * [TabTPS](https://www.spigotmc.org/resources/tabtps-1-8-8-1-21-show-tps-mspt-and-more-in-the-tab-menu.82528/)
 * [TreeFeller](https://modrinth.com/plugin/thizzyz-tree-feller)
 * [WorldGuard](https://worldguard.enginehub.org/en/latest/)
@@ -45,5 +44,4 @@ Datapacks need to be copied to `world/datapacks`.
   * `imageframe.info`
   * `imageframe.list`
   * `imageframe.get`
-  * `mobleash.*`
   * `treefeller.*`
