@@ -1,6 +1,6 @@
 # dengie
 
-Denie Minecraft Spigot modded server 1.21.1 from
+Denie Minecraft Spigot modded server 1.21.4 from
 [BuildTools](https://hub.spigotmc.org/jenkins/job/BuildTools/).
 
 
