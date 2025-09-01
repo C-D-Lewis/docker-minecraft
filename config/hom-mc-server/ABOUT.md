@@ -84,4 +84,4 @@ The table below shows the locations of known settlements and points of interest.
 
 ## Nether Road Map
 
-<img src="config/hom-mc-server/assets/images/nether-roads.drawio.png" style="max-width: 600px; margin: 0px auto"></img>
+<img src="assets/images/nether-roads.drawio.png" style="max-width: 600px; margin: 0px auto"></img>
