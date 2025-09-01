@@ -40,6 +40,12 @@ The table below shows the locations of known settlements and points of interest.
     <td><code>1766 131 2508</code></td>
     <td>Yes</td>
   </tr>
+  <tr>
+    <td><img src="assets/images/coral-atoll.png" style="max-width: 200px"></img></td>
+    <td>Coral Atoll</td>
+    <td><code>12785 64 5319</code></td>
+    <td>Yes</td>
+  </tr>
 </table>
 
 ### Other POI
