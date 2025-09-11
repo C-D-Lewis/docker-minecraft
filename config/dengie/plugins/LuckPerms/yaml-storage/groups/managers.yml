@@ -1,3 +1,4 @@
 name: managers
 permissions:
+- minecraft.command.tp
 - minecraft.command.whitelist
