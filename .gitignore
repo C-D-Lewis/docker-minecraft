@@ -74,3 +74,5 @@ config/**/plugins/WorldEdit/.*
 config/**/plugins/WorldEdit/assets
 config/**/plugins/WorldEdit/schematics
 config/**/plugins/WorldEdit/sessions
+
+config/**/plugins/ImageFrame/upload
