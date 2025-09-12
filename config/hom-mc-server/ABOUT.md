@@ -1,4 +1,4 @@
-# hom-mc-server
+# hom
 
 * [Locations](#locations)
 * [Nether Road Map](#nether-road-map)
