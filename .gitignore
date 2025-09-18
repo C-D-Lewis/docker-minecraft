@@ -50,8 +50,7 @@ config/**/plugins/dynmap/templates
 config/**/plugins/dynmap/texturepacks
 config/**/plugins/dynmap/version.txt
 config/**/plugins/dynmap/web
-config/**/plugins/dynmap/world.pending
-config/**/plugins/dynmap/world_nether.pending
+config/**/plugins/dynmap/*.pending
 config/**/plugins/dynmap/worlds.txt
 
 config/**/plugins/BottledExp/blocks.yml
