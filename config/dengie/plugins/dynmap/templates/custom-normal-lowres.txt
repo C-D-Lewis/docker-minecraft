@@ -38,7 +38,7 @@ templates:
         name: cave
         title: "Cave"
         prefix: ct
-        perspective: iso_SE_60_lowres
+        perspective: iso_SE_30_medres
         shader: cave
         lighting: default
         # Adjust extra zoom in levels - default is 2
