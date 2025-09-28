@@ -6,5 +6,6 @@
   "S3_BACKUP_DIR": "s3://hom-mc-server/backups",
   "DNS_SUBDOMAIN": "",
   "PORT": "25501",
-  "DYNMAP_PORT": ""
+  "DYNMAP_PORT": "",
+  "USE_EFS": false
 }

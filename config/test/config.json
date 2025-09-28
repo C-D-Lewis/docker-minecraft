@@ -6,5 +6,6 @@
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
   "DNS_SUBDOMAIN": "test",
   "PORT": "25565",
-  "DYNMAP_PORT": ""
+  "DYNMAP_PORT": "",
+  "USE_EFS": true
 }

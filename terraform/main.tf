@@ -31,6 +31,7 @@ module "infrastructure" {
   certificate_arn     = "arn:aws:acm:us-east-1:617929423658:certificate/a69e6906-579e-431d-9e4c-707877d325b7"
   route53_zone_id     = "Z05682866H59A0KFT8S"
   route53_domain_name = "chrislewis.me.uk"
+  create_efs          = true
 }
 
 output "dns_address" {
@@ -38,9 +39,9 @@ output "dns_address" {
 }
 
 output "ecr_name" {
-  value       = module.infrastructure.ecr_name
+  value = module.infrastructure.ecr_name
 }
 
 output "ecr_uri" {
-  value       = module.infrastructure.ecr_uri
+  value = module.infrastructure.ecr_uri
 }
