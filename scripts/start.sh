@@ -18,15 +18,18 @@ if [[ $ON_AWS == "true" ]]; then
 
   # Symlink world dirs to /var/data/efs
   for DIR in world world_nether world_the_end plugins; do
-    # Create if doesn't exist
+    # Create in EFS if doesn't exist
     if [[ ! -d "$EFS_DIR/$DIR" ]]; then
       mkdir -p "$EFS_DIR/$DIR"
+    fi
+    # Create symlink in this instance
+    if [[ ! -d "$DIR" ]]; then
       ln -s "$EFS_DIR/$DIR" "$DIR"
       echo ">>> Created symlink $DIR -> $EFS_DIR/$DIR"
     fi
   done
 
-  # TODO: Fetch latest world
+  # Fetch latest world - need AWS CLI and script updated for right binary
   # ./scripts/fetch-latest-world.sh $SERVER_NAME confirm
 fi
 
