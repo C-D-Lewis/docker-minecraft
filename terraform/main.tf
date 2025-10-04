@@ -32,6 +32,7 @@ module "infrastructure" {
   route53_zone_id     = "Z05682866H59A0KFT8S"
   route53_domain_name = "chrislewis.me.uk"
   create_efs          = true
+  health_check_port   = 80
 }
 
 output "dns_address" {

@@ -3,6 +3,7 @@
 set -eu
 
 SERVER_NAME=$1
+CONFIRM=$2
 
 if [ ! -d "./config/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
@@ -10,9 +11,11 @@ if [ ! -d "./config/$SERVER_NAME" ]; then
 fi
 S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
 
-read -p "WARNING: This will erase local world directory and replace with latest from S3 (y/n)?" CONT
-if [ "$CONT" != "y" ]; then
-  exit 0
+if [ $CONFIRM != 'confirm' ]; then
+  read -p "WARNING: This will erase local world directory and replace with latest from S3 (y/n)?" CONT
+  if [ "$CONT" != "y" ]; then
+    exit 0
+  fi
 fi
 
 echo ">>> Erasing world"

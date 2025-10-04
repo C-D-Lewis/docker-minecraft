@@ -7,5 +7,5 @@
   "DNS_SUBDOMAIN": "",
   "PORT": "25501",
   "DYNMAP_PORT": "",
-  "USE_EFS": false
+  "ON_AWS": false
 }

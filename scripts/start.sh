@@ -9,19 +9,25 @@ EFS_DIR=/var/data/efs
 
 MEMORY=$(cat ./config.json | jq -r ".MEMORY")
 PORT=$(cat ./config.json | jq -r ".PORT")
-USE_EFS=$(cat ./config.json | jq -r ".USE_EFS")
+SERVER_NAME=$(cat ./config.json | jq -r ".SERVER_NAME")
+ON_AWS=$(cat ./config.json | jq -r ".ON_AWS")
 
-# Symlink world dirs to /var/data/efs
-if [[ -n $USE_EFS ]]; then
-  for DIR in world world_nether world_the_end; do
+if [[ $ON_AWS == "true" ]]; then
+  # Start simple web server for health check
+  python3 -m http.server 80 --directory "." &
+
+  # Symlink world dirs to /var/data/efs
+  for DIR in world world_nether world_the_end plugins; do
     # Create if doesn't exist
     if [[ ! -d "$EFS_DIR/$DIR" ]]; then
       mkdir -p "$EFS_DIR/$DIR"
+      ln -s "$EFS_DIR/$DIR" "$DIR"
+      echo ">>> Created symlink $DIR -> $EFS_DIR/$DIR"
     fi
-
-    ln -s "$EFS_DIR/$DIR" "$DIR"
-    echo ">>> Created symlink"
   done
+
+  # TODO: Fetch latest world
+  # ./scripts/fetch-latest-world.sh $SERVER_NAME confirm
 fi
 
 java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT

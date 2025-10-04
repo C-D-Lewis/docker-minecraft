@@ -19,12 +19,14 @@ mkdir -p world
 
 # Run the image with exposed:
 # - Minecraft server port
+# - HTTP port for health checks
 # - Dynmap port (if specified)
 # - Mounted world directory (some for Spigot servers too)
 # - Any spigot plugins and associated data
 docker run --rm \
   --name $SERVER_NAME \
   -p $PORT:$PORT \
+  -p 80:80 \
   $(if [[ -n "$DYNMAP_PORT" && ${#DYNMAP_PORT} -gt 0 ]]; then echo "-p $DYNMAP_PORT:$DYNMAP_PORT"; fi) \
   -v ./world:/server/world \
   -v ./world_nether:/server/world_nether \
