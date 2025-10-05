@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# TODO: How to get plugins in the EFS?
-# FIXME: Permissions issue for root user in Docker container - use APs?
-
 set -eu
 
 EFS_DIR=/var/data/efs
@@ -11,6 +8,8 @@ MEMORY=$(cat ./config.json | jq -r ".MEMORY")
 PORT=$(cat ./config.json | jq -r ".PORT")
 SERVER_NAME=$(cat ./config.json | jq -r ".SERVER_NAME")
 ON_AWS=$(cat ./config.json | jq -r ".ON_AWS")
+
+first_launch="false"
 
 if [[ $ON_AWS == "true" ]]; then
   # Start simple web server for health check
@@ -21,6 +20,8 @@ if [[ $ON_AWS == "true" ]]; then
     # Create in EFS if doesn't exist
     if [[ ! -d "$EFS_DIR/$DIR" ]]; then
       mkdir -p "$EFS_DIR/$DIR"
+
+      first_launch="true"
     fi
     # Create symlink in this instance
     if [[ ! -d "$DIR" ]]; then
@@ -29,8 +30,13 @@ if [[ $ON_AWS == "true" ]]; then
     fi
   done
 
-  # Fetch latest world - need AWS CLI and script updated for right binary
-  # ./scripts/fetch-latest-world.sh $SERVER_NAME confirm
+  if [[ $first_launch == "true" ]]; then
+    echo ">>> First launch - fetching latest world from S3"
+    # Fetch latest world - need AWS CLI and script updated for right binary
+    ./scripts/fetch-latest-world.sh $SERVER_NAME confirm
+  fi
+
+  # TODO: How to upload backups from Fargate?
 fi
 
 java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT

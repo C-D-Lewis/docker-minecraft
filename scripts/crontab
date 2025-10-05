@@ -5,15 +5,15 @@ AWS_SECRET_ACCESS_KEY=
 @reboot /home/pi/code/node-microservices/launch-config/run.sh /home/pi > /home/pi/crontab.log 2>&1
 
 # docker-minecraft dengie
-@reboot sleep 15 && cd /mnt/nvme2/docker-minecraft_dengie && ./scripts/start-docker.sh dengie
+@reboot sleep 15 && cd /mnt/ssd/docker-minecraft_dengie && ./scripts/start-docker.sh dengie
 # Local backup
-0 2 * * * cd /mnt/nvme2/docker-minecraft_dengie && ./scripts/local-backup.sh dengie pi > /home/pi/local-backup_dengie.log 2>&1
+0 2 * * * cd /mnt/ssd/docker-minecraft_dengie && ./scripts/local-backup.sh dengie pi > /home/pi/local-backup_dengie.log 2>&1
 # AWS backup
-0 3 * * 1 cd /mnt/nvme2/docker-minecraft_dengie && ./scripts/upload-backup.sh dengie pi > /home/pi/upload-backup_dengie.log 2>&1
+0 3 * * 1 cd /mnt/ssd/docker-minecraft_dengie && ./scripts/upload-backup.sh dengie pi > /home/pi/upload-backup_dengie.log 2>&1
 
 # docker-minecraft hom-mc-server
-@reboot sleep 120 && cd /mnt/nvme2/docker-minecraft_hom && ./scripts/start-docker.sh hom
+@reboot sleep 120 && cd /mnt/ssd/docker-minecraft_hom && ./scripts/start-docker.sh hom
 # Local backup
-0 5 * * * cd /mnt/nvme2/docker-minecraft_hom && ./scripts/local-backup.sh hom pi > /home/pi/local-backup_hom.log 2>&1
+0 5 * * * cd /mnt/ssd/docker-minecraft_hom && ./scripts/local-backup.sh hom pi > /home/pi/local-backup_hom.log 2>&1
 # AWS backup
-0 6 * * 1 cd /mnt/nvme2/docker-minecraft_hom && ./scripts/upload-backup.sh hom pi > /home/pi/upload-backup_hom.log 2>&1
+0 6 * * 1 cd /mnt/ssd/docker-minecraft_hom && ./scripts/upload-backup.sh hom pi > /home/pi/upload-backup_hom.log 2>&1

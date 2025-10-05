@@ -12,7 +12,7 @@ PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".PORT")
 DYNMAP_PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".DYNMAP_PORT")
 
 # Build the image
-docker build -t $SERVER_NAME . --build-arg CONFIG=$SERVER_NAME
+docker build -t $SERVER_NAME . --build-arg SERVER_NAME=$SERVER_NAME
 
 # Make sure the world directory exists to mount and persist to
 mkdir -p world

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Needs to be run with 'sudo -E' to preserve AWS env vars and set perms
+
 set -eu
 
 SERVER_NAME=$1
@@ -21,10 +23,10 @@ export HOME="${HOME:=/home/$USR}"
 mv "backup.zip" "$OUTPUT_FILE"
 
 echo ">>> Uploading to $S3_BACKUP_DIR"
-/usr/local/bin/aws s3 cp $OUTPUT_FILE "$S3_BACKUP_DIR/"
+$(which aws) s3 cp $OUTPUT_FILE "$S3_BACKUP_DIR/"
 
 echo ">>> Copying to latest"
-/usr/local/bin/aws s3 cp "$S3_BACKUP_DIR/$OUTPUT_FILE" "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip"
+$(which aws) s3 cp "$S3_BACKUP_DIR/$OUTPUT_FILE" "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip"
 
 echo ">>> Cleaning up"
 rm -rf $OUTPUT_FILE

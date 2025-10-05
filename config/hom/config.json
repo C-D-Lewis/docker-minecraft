@@ -4,7 +4,6 @@
   "MEMORY": "2G",
   "LOCAL_BACKUP_DIR": "/mnt/ssd/backups",
   "S3_BACKUP_DIR": "s3://hom-mc-server/backups",
-  "DNS_SUBDOMAIN": "",
   "PORT": "25501",
   "DYNMAP_PORT": "",
   "ON_AWS": false

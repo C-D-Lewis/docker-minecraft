@@ -1,14 +1,14 @@
 # docker-minecraft
 
-Standalone Docker-based Minecraft server setup with backups and DNS record
-management, primarily for Raspberry Pi 5 with 8 GB of RAM.
+Standalone Docker-based Minecraft server setup with backups, primarily for
+Raspberry Pi 5 with 8 GB of RAM. Also contains Terraform scripts for deployment
+into AWS.
 
 * [Prerequisites](#prerequisites)
 * [Customizations](#customizations)
 * [Docker build and run](#docker-build-and-run)
 * [Stopping the server](#stopping-the-server)
 * [Backups](#backups)
-* [DNS](#dns)
 * [AWS Deployment](#aws-deployment)
 
 ## Prerequisites
@@ -114,53 +114,13 @@ AWS_SECRET_ACCESS_KEY=
 0 4 * * 1 cd /mnt/ssd/docker-minecraft && ./scripts/upload-backup.sh test pi > /home/pi/upload-backup.log 2>&1
 ```
 
-## DNS
-
-Use the `scripts/update-dns.sh` script to keep a DNS record pointed at the
-server's public IP address in case it changes.
-
-Install Node.js via `nvm`:
-
-```shell
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-# Install node 20
-nvm install 20
-nvm alias default 20
-```
-
-Install node dependencies:
-
-```
-npm i
-```
-
-Run the monitor with AWS credentials that can update Route53 records, server
-config to use:
-
-```shell
-export AWS_ACCESS_KEY_ID=
-export AWS_SECRET_ACCESS_KEY=
-
-./scripts/update-dns.sh $SERVER_NAME
-```
-
-Add to crontab to run the monitor on boot:
-
-```
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-
-@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/update-dns.sh test > /home/pi/update-dns.log 2>&1
-```
-
 ## AWS Deployment
 
 > **Experimental**
-> Image run will lose ALL data once the container exits.
 
-Deploy infrastructure and a Docker image to AWS.
+Deploy infrastructure and a Docker image to AWS. Creates a Fargate instance
+connected to an EFS filesystem, and attempts to download the latest world
+backup on launch.
 
 ```
 cd terraform
@@ -174,3 +134,5 @@ Then push an image to ECR:
 ```
 ./scripts/push-image.sh $SERVER_NAME
 ```
+
+TODO: Use NLB instead of ALB with Terraform modules for non-HTTPS DNS routing.

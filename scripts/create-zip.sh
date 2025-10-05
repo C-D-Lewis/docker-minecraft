@@ -20,7 +20,8 @@ zip -r $OUTPUT_FILE . \
   --exclude "*backups*" \
   --exclude "*spark*"  \
   --exclude "*dynmap/web/tiles*" \
-  --exclude "./*.zip"
+  --exclude "./*.zip" \
+  --exclude "*terraform*"
 
 size=$(stat -c '%s' $OUTPUT_FILE | numfmt --to=si --suffix=B)
 echo ">>> Size: $size"

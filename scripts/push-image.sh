@@ -13,7 +13,7 @@ if [ ! -d "./config/$SERVER_NAME" ]; then
 fi
 
 # Build the image
-docker build -t $IMAGE_NAME . --build-arg CONFIG=$SERVER_NAME
+docker build -t $IMAGE_NAME . --build-arg SERVER_NAME=$SERVER_NAME --build-arg ON_AWS=true
 
 # Get details
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
