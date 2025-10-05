@@ -6,5 +6,5 @@
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
   "PORT": "25565",
   "DYNMAP_PORT": "",
-  "ON_AWS": true
+  "ON_AWS": "true"
 }

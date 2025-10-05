@@ -126,7 +126,7 @@ backup on launch.
 cd terraform
 
 terraform init
-terraform apply
+terraform apply -var "server_name=test-aws"
 ```
 
 Then push an image to ECR:

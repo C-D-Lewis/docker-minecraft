@@ -19,14 +19,18 @@ provider "aws" {
   region = "us-east-1"
 }
 
+locals {
+  config = jsondecode(file("${path.module}/../config/${var.server_name}/config.json"))
+}
+
 module "infrastructure" {
   source = "github.com/c-d-lewis/terraform-modules//ecs-fargate-service?ref=master"
 
   region              = "us-east-1"
   service_name        = "docker-minecraft"
-  container_cpu       = 1024
-  container_memory    = 2048
-  port                = 25565 # TODO: Match port in the server config, somehow
+  container_cpu       = 4096
+  container_memory    = 8192
+  port                = local.config.PORT
   vpc_id              = "vpc-c3b70bb9"
   certificate_arn     = "arn:aws:acm:us-east-1:617929423658:certificate/a69e6906-579e-431d-9e4c-707877d325b7"
   route53_zone_id     = "Z05682866H59A0KFT8S"
@@ -45,4 +49,9 @@ output "ecr_name" {
 
 output "ecr_uri" {
   value = module.infrastructure.ecr_uri
+}
+
+variable "server_name" {
+  description = "Name of the selected server config"
+  type        = string
 }
