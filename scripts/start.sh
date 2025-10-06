@@ -13,7 +13,7 @@ first_launch="false"
 
 if [[ $ON_AWS == "true" ]]; then
   # Start simple web server for health check
-  python3 -m http.server 80 --directory "." &
+  python3 -m http.server 80 --directory "$EFS_DIR" &
 
   # Symlink world dirs to /var/data/efs
   for DIR in world world_nether world_the_end plugins; do
@@ -21,6 +21,7 @@ if [[ $ON_AWS == "true" ]]; then
     if [[ ! -d "$EFS_DIR/$DIR" ]]; then
       mkdir -p "$EFS_DIR/$DIR"
 
+      echo ">>> Created $EFS_DIR/$DIR"
       first_launch="true"
     fi
     # Create symlink in this instance
@@ -35,6 +36,10 @@ if [[ $ON_AWS == "true" ]]; then
     # Fetch latest world - need AWS CLI and script updated for right binary
     ./scripts/fetch-latest-world.sh $SERVER_NAME confirm
   fi
+
+  # Print contents of EFS dir for debugging
+  echo ">>> EFS contents:"
+  du -h -d 1 $EFS_DIR
 
   # TODO: How to upload backups from Fargate?
 fi

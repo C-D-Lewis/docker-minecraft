@@ -2,10 +2,12 @@
 
 set -eu
 
-ECR_NAME="docker-minecraft-ecr"
-IMAGE_NAME="docker-minecraft"
-
 SERVER_NAME=$1
+
+ECR_NAME="dkr-mc-$SERVER_NAME-ecr"
+IMAGE_NAME="docker-minecraft"
+REGION="eu-west-2"
+
 
 if [ ! -d "./config/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
@@ -17,8 +19,8 @@ docker build -t $IMAGE_NAME . --build-arg SERVER_NAME=$SERVER_NAME --build-arg O
 
 # Get details
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
-RES=$(aws ecr describe-repositories --region us-east-1 --repository-names $ECR_NAME)
+aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
+RES=$(aws ecr describe-repositories --region $REGION --repository-names $ECR_NAME)
 ECR_URI="$(echo $RES | jq -r '.repositories[0].repositoryUri')"
 
 # Tag and push image to ECR

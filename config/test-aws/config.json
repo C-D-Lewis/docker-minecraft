@@ -1,6 +1,6 @@
 {
   "SERVER_NAME": "test-aws",
-  "JAR": "minecraft-server_1.21.1.jar",
+  "JAR": "minecraft-server_1.21.4.jar",
   "MEMORY": "1G",
   "LOCAL_BACKUP_DIR": "",
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",

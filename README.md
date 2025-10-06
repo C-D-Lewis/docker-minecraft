@@ -135,4 +135,4 @@ Then push an image to ECR:
 ./scripts/push-image.sh $SERVER_NAME
 ```
 
-TODO: Use NLB instead of ALB with Terraform modules for non-HTTPS DNS routing.
+- [ ] Devise solution to get backups out of the instance.
