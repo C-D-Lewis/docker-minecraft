@@ -1,4 +1,9 @@
 **/world*
+**/.git*
+**/rendering*
+**/terraform*
+
 *.zip
+*.log
 
 config/**/plugins/*

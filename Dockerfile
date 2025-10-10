@@ -1,5 +1,7 @@
 FROM debian:bookworm-slim AS platform
 
+ARG ON_AWS=false
+
 RUN apt update --fix-missing && \
   apt upgrade -y && \
   apt install -y curl jq && \
@@ -12,7 +14,6 @@ ADD ./scripts/install-platform-java.sh .
 RUN ./install-platform-java.sh
 RUN java --version || (echo "java was not found" && false)
 
-ARG ON_AWS=false
 RUN if [ "$ON_AWS" = "true" ]; then \
   # Install python3 for healthcheck server and AWS CLI
   apt update && \
@@ -45,8 +46,10 @@ RUN ./fetch-server.sh
 # Copy other scripts
 ADD ./scripts ./scripts
 
-# Then all other files for optimal layering
+# Copy all server-specific files the MC server expects at the top
 ADD ./config/${SERVER_NAME} .
+
+# Copy config dir in places scripts expect it
 ADD ./config/${SERVER_NAME} ./config/${SERVER_NAME}/
 
 CMD ["/server/scripts/start.sh"]
