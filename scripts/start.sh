@@ -16,6 +16,7 @@ if [[ $ON_AWS == "true" ]]; then
   python3 -m http.server 80 --directory "$EFS_DIR" &
 
   # Symlink world dirs to /var/data/efs
+  # NOTE: This dir list works for vanilla and PaperMC, but may not for others
   for DIR in world world_nether world_the_end plugins; do
     # Create in EFS if doesn't exist
     if [[ ! -d "$EFS_DIR/$DIR" ]]; then
@@ -34,14 +35,12 @@ if [[ $ON_AWS == "true" ]]; then
   if [[ $first_launch == "true" ]]; then
     echo ">>> First launch - fetching latest world from S3"
     # Fetch latest world - need AWS CLI and script updated for right binary
-    ./scripts/fetch-latest-world.sh $SERVER_NAME confirm
+    ./scripts/fetch-latest-world.sh $SERVER_NAME
   fi
 
   # Print contents of EFS dir for debugging
   echo ">>> EFS contents:"
   du -h -d 1 $EFS_DIR
-
-  # TODO: How to upload backups from Fargate?
 fi
 
 java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT

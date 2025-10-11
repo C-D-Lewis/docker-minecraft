@@ -3,10 +3,10 @@
 set -eu
 
 SERVER_NAME=$1
-ON_AWS=$2
 
-# Only validate if not on AWS 
-if [[ $ON_AWS != "confirm" ]]; then
+ON_AWS=$(cat ./config/$SERVER_NAME/config.json | jq -r ".ON_AWS")
+
+if [[ $ON_AWS != "true" ]]; then
   if [ ! -d "./config/$SERVER_NAME" ]; then
     echo "Invalid SERVER_NAME"
     exit 1
@@ -14,16 +14,13 @@ if [[ $ON_AWS != "confirm" ]]; then
 fi
 S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
 
-# Only prompt if not bypassing
-if [ $ON_AWS != 'confirm' ]; then
+# Only prompt if not on AWS
+if [ $ON_AWS != "true" ]; then
   read -p "WARNING: This will erase local world directory and replace with latest from S3 (y/n)?" CONT
   if [ "$CONT" != "y" ]; then
     exit 0
   fi
-fi
 
-# Only erase if not bypassing (on AWS)
-if [ $ON_AWS != 'confirm' ]; then
   echo ">>> Erasing worlds"
   rm -rf ./world
   rm -rf ./world_nether
@@ -37,7 +34,6 @@ echo ">>> Unzipping world"
 unzip $SERVER_NAME-latest.zip -d ./temp
 
 echo ">>> Copying worlds"
-# Handle AWS case where these are symlinks and already exist
 mkdir -p ./world || true
 mkdir -p ./world_nether || true
 mkdir -p ./world_the_end || true

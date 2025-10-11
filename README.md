@@ -132,7 +132,14 @@ terraform apply -var "server_name=test-aws"
 Then push an image to ECR:
 
 ```
-./scripts/push-image.sh $SERVER_NAME
+./scripts/aws/push-image.sh $SERVER_NAME
 ```
 
-- [ ] Devise solution to get backups out of the instance.
+To retrieve a backup of the world, use the script to launch a dedicated
+Fargate task and monitor the logs:
+
+```
+./scripts/aws/launch-backup-task.sh $SERVER_NAME
+```
+
+The result will be store in S3.

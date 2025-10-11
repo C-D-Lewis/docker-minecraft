@@ -17,7 +17,7 @@ RUN java --version || (echo "java was not found" && false)
 RUN if [ "$ON_AWS" = "true" ]; then \
   # Install python3 for healthcheck server and AWS CLI
   apt update && \
-  apt install -y python3 python3-pip unzip && \
+  apt install -y python3 python3-pip unzip zip && \
   python3 --version || (echo "python3 was not found" && false) && \
   pip3 install --no-cache-dir awscli --break-system-packages && \
   aws --version || (echo "aws was not found" && false) && \

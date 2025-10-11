@@ -3,16 +3,14 @@
 set -eu
 
 SERVER_NAME=$1
-
-ECR_NAME="dkr-mc-$SERVER_NAME-ecr"
-IMAGE_NAME="docker-minecraft"
-REGION="eu-west-2"
-
-
 if [ ! -d "./config/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
   exit 1
 fi
+
+ECR_NAME="dkr-mc-$SERVER_NAME-ecr"
+IMAGE_NAME="docker-minecraft"
+REGION="eu-west-2"
 
 # Build the image
 docker build -t $IMAGE_NAME . --build-arg SERVER_NAME=$SERVER_NAME --build-arg ON_AWS=true
