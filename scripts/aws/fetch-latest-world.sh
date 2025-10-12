@@ -42,7 +42,11 @@ cp -r ./temp/world_nether/* ./world_nether/ || true
 cp -r ./temp/world_the_end/* ./world_the_end/ || true
 
 echo ">>> Copying plugin data"
-cp -r "./temp/config/$SERVER_NAME/plugins" "./config/$SERVER_NAME/" || true
+if [ $ON_AWS == "true" ]; then
+  cp -r "./temp/config/$SERVER_NAME/plugins/*" "/var/data/efs/plugins/" || true
+else
+  cp -r "./temp/config/$SERVER_NAME/plugins" "./config/$SERVER_NAME/" || true
+fi
 
 echo ">>> Cleaning up"
 rm -rf ./temp

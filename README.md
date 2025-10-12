@@ -135,6 +135,21 @@ Then push an image to ECR:
 ./scripts/aws/push-image.sh $SERVER_NAME
 ```
 
+Wait for a task to start and get to the `RUNNING` status:
+
+```
+watch ./scripts/aws/get-tasks.sh
+```
+
+```
+---------------------------------------------------------------------------------------------------------------
+|                                                DescribeTasks                                                |
++--------------------------------------------------------------------------------------------------+----------+
+|  arn:aws:ecs:eu-west-2:617929423658:task/dkr-mc-dengie-cluster/024176ebd297426293f35a551ad32e6f  |  RUNNING |
++--------------------------------------------------------------------------------------------------+----------+
+
+```
+
 To retrieve a backup of the world, use the script to launch a dedicated
 Fargate task and monitor the logs:
 

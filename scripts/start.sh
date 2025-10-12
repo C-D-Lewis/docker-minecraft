@@ -24,6 +24,9 @@ if [[ $ON_AWS == "true" ]]; then
 
       echo ">>> Created $EFS_DIR/$DIR"
       first_launch="true"
+    else
+      echo ">>> Found existing $EFS_DIR/$DIR"
+      ls -lh "$EFS_DIR/$DIR"
     fi
     # Create symlink in this instance
     if [[ ! -d "$DIR" ]]; then
@@ -35,7 +38,7 @@ if [[ $ON_AWS == "true" ]]; then
   if [[ $first_launch == "true" ]]; then
     echo ">>> First launch - fetching latest world from S3"
     # Fetch latest world - need AWS CLI and script updated for right binary
-    ./scripts/fetch-latest-world.sh $SERVER_NAME
+    ./scripts/aws/fetch-latest-world.sh $SERVER_NAME
   fi
 
   # Print contents of EFS dir for debugging
