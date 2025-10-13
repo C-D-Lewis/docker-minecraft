@@ -122,6 +122,8 @@ Deploy infrastructure and a Docker image to AWS. Creates a Fargate instance
 connected to an EFS filesystem, and attempts to download the latest world
 backup on launch.
 
+> For convenience, you can use `./scripts/aws/deploy.sh $SERVER_NAME`.
+
 ```
 cd terraform
 

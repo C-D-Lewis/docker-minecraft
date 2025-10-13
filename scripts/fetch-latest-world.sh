@@ -43,7 +43,7 @@ cp -r ./temp/world_the_end/* ./world_the_end/ || true
 
 echo ">>> Copying plugin data"
 if [ $ON_AWS == "true" ]; then
-  cp -r "./temp/config/$SERVER_NAME/plugins/*" "/var/data/efs/plugins/" || true
+  cp -r "./temp/config/$SERVER_NAME/plugins" "/var/data/efs/" || true
 else
   cp -r "./temp/config/$SERVER_NAME/plugins" "./config/$SERVER_NAME/" || true
 fi

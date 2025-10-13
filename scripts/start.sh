@@ -15,6 +15,9 @@ if [[ $ON_AWS == "true" ]]; then
   # Start simple web server for health check
   python3 -m http.server 80 --directory "$EFS_DIR" &
 
+  # HACK for frest start DO NOT COMMIT ENABLED
+  # rm -rf /var/data/efs/*
+
   # Symlink world dirs to /var/data/efs
   # NOTE: This dir list works for vanilla and PaperMC, but may not for others
   for DIR in world world_nether world_the_end plugins; do
@@ -38,7 +41,7 @@ if [[ $ON_AWS == "true" ]]; then
   if [[ $first_launch == "true" ]]; then
     echo ">>> First launch - fetching latest world from S3"
     # Fetch latest world - need AWS CLI and script updated for right binary
-    ./scripts/aws/fetch-latest-world.sh $SERVER_NAME
+    ./scripts/fetch-latest-world.sh $SERVER_NAME
   fi
 
   # Print contents of EFS dir for debugging

@@ -52,4 +52,7 @@ ADD ./config/${SERVER_NAME} .
 # Copy config dir in places scripts expect it
 ADD ./config/${SERVER_NAME} ./config/${SERVER_NAME}/
 
+# Remove any added plugins before being mounted
+RUN rm -rf ./plugins
+
 CMD ["/server/scripts/start.sh"]

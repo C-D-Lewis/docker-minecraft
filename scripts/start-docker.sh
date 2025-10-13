@@ -22,7 +22,7 @@ mkdir -p world
 # - Dynmap port (if specified)
 # - Mounted world directory (some for Spigot servers too)
 # - Any spigot plugins and associated data
-docker run --rm -d \
+docker run --rm \
   --name $SERVER_NAME \
   -p $PORT:$PORT \
   $(if [[ -n "$DYNMAP_PORT" && ${#DYNMAP_PORT} -gt 0 ]]; then echo "-p $DYNMAP_PORT:$DYNMAP_PORT"; fi) \

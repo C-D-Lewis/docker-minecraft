@@ -13,6 +13,7 @@ export HOME="${HOME:=/home/$USR}"
 DATE=$(TZ=GMT date +"%Y%m%d")
 OUTPUT_FILE="$SERVER_NAME-$DATE.zip"
 EFS_DIR=/var/data/efs
+AWS_BIN=$(which aws || echo "/usr/local/bin/aws")
 
 if [ ! -d "./config/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
@@ -37,10 +38,10 @@ echo ">>> Creating backup for $SERVER_NAME"
 
 echo ">>> Uploading to $S3_BACKUP_DIR"
 mv "backup.zip" "$OUTPUT_FILE"
-$(which aws) s3 cp $OUTPUT_FILE "$S3_BACKUP_DIR/"
+$AWS_BIN s3 cp $OUTPUT_FILE "$S3_BACKUP_DIR/"
 
 echo ">>> Copying to latest"
-$(which aws) s3 cp "$S3_BACKUP_DIR/$OUTPUT_FILE" "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip"
+$AWS_BIN s3 cp "$S3_BACKUP_DIR/$OUTPUT_FILE" "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip"
 
 echo ">>> Cleaning up"
 rm -rf $OUTPUT_FILE
