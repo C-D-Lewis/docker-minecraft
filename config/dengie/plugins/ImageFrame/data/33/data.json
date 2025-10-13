@@ -1,0 +1,24 @@
+{
+  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "index": 33,
+  "name": "skilodge",
+  "url": "https://s3.us-east-1.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/skilodge.png",
+  "width": 2,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "d89c37c3-fde1-4732-88a2-92712cf0ec84",
+  "hasAccess": {},
+  "creationTime": 1760191830577,
+  "mapdata": [
+    {
+      "mapid": 335,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 336,
+      "image": "1.png",
+      "markers": []
+    }
+  ]
+}
