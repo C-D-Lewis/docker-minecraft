@@ -116,6 +116,8 @@ AWS_SECRET_ACCESS_KEY=
 
 ## AWS Deployment
 
+![](assets/docker-minecraft-aws.drawio.png)
+
 > **Experimental**
 
 Deploy infrastructure and a Docker image to AWS. Creates a Fargate instance
@@ -160,3 +162,5 @@ Fargate task and monitor the logs:
 ```
 
 The result will be store in S3.
+
+> TODO: Compare backup file contents with manual script.

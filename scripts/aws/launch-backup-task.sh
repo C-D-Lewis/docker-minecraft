@@ -49,3 +49,5 @@ RES=$(aws ecs run-task \
 TASK_ID=$(echo $RES | jq -r '.tasks[0].taskArn')
 echo ">>> Started: $TASK_ID"
 echo ""
+
+watch ./scripts/aws/get-tasks.sh $SERVER_NAME
