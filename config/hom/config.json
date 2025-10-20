@@ -6,5 +6,6 @@
   "S3_BACKUP_DIR": "s3://hom-mc-server/backups",
   "PORT": "25501",
   "DYNMAP_PORT": "",
-  "ON_AWS": "false"
+  "ON_AWS": "false",
+  "CMD": ""
 }

@@ -8,6 +8,7 @@ MEMORY=$(cat ./config.json | jq -r ".MEMORY")
 PORT=$(cat ./config.json | jq -r ".PORT")
 SERVER_NAME=$(cat ./config.json | jq -r ".SERVER_NAME")
 ON_AWS=$(cat ./config.json | jq -r ".ON_AWS")
+CMD=$(cat ./config.json | jq -r ".CMD")
 
 first_launch="false"
 
@@ -49,4 +50,11 @@ if [[ $ON_AWS == "true" ]]; then
   du -h -d 1 $EFS_DIR
 fi
 
-java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT
+if [ "$CMD" != "" ]; then
+  echo ">>> Running custom start command: $CMD"
+  $CMD
+  exit $?
+else
+  echo ">>> No custom start command set, running default start"
+  java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT
+fi

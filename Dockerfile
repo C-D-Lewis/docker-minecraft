@@ -55,4 +55,7 @@ ADD ./config/${SERVER_NAME} ./config/${SERVER_NAME}/
 # Remove any added plugins before being mounted
 RUN rm -rf ./plugins
 
+# For Forge servers
+ADD libraries ./libraries
+
 CMD ["/server/scripts/start.sh"]

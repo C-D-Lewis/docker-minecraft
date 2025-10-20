@@ -1,3 +1,5 @@
 #!/bin/bash
 
-tree --du -h | grep ^├─
+DIR=${1:-.}
+
+tree --du -h $DIR | grep ^├─
