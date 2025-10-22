@@ -14,7 +14,7 @@ fi
 
 curl "https://s3.amazonaws.com/public-files.chrislewis.me.uk/infra/$file" -o java.tar.gz
 
-tar -xzf java.tar.gz
+tar -xzf java.tar.gz -C /opt
 
 update-alternatives --install /usr/bin/java java /opt/jdk-22.0.2/bin/java 1
 

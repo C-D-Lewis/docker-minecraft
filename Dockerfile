@@ -9,7 +9,6 @@ RUN apt update --fix-missing && \
   rm -rf /var/lib/apt/lists/*
 
 # Install java 22 for MC 1.21.1+
-WORKDIR /opt
 ADD ./scripts/install-platform-java.sh .
 RUN ./install-platform-java.sh
 RUN java --version || (echo "java was not found" && false)
@@ -55,7 +54,7 @@ ADD ./config/${SERVER_NAME} ./config/${SERVER_NAME}/
 # Remove any added plugins before being mounted
 RUN rm -rf ./plugins
 
-# For Forge servers
+# For Forge/modded servers
 ADD libraries ./libraries
 
 CMD ["/server/scripts/start.sh"]
