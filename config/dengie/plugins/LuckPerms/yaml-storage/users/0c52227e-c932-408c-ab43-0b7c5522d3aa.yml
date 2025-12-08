@@ -3,4 +3,5 @@ name: MaxRazzaGazza
 primary-group: default
 parents:
 - default
+- hosts
 - managers
