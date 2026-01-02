@@ -13,28 +13,30 @@ Datapacks need to be copied to `world/datapacks`.
 
 ## Plugins
 
-Shown in ascending order of max supported Minecraft version.
+Shown in ascending order of supported Minecraft version.
 
 #1 rule: keep the list small, and avoid mods adding new content (blocks etc).
 
-| Name       | MC V.   | Link |
-|------------|---------|------|
-| BottledExp | 1.21.4  | [link](https://www.spigotmc.org/resources/bottledexp.2815/) |
-| ChestLock  | 1.21.4  | [link](https://www.spigotmc.org/resources/chest-lock-with-automatic-sorting.81204/) |
-| todolist   | ?       | [link](https://github.com/C-D-Lewis/mc-dev/tree/main/todolist) |
-| Dynmap     | 1.21.7  | [link](https://www.spigotmc.org/resources/dynmap%C2%AE.274/) |
-| WorldGuard | 1.21.8  | [link](https://dev.bukkit.org/projects/worldguard) |
+'*' = works without launch errors on current server version
+
+| Name       | MC V.   | Link                                                                                                                                     |
+|------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
+| todolist   | ?*      | [link](https://github.com/C-D-Lewis/mc-dev/tree/main/todolist)                                                                           |
+| BottledExp | 1.21.4* | [link](https://www.spigotmc.org/resources/bottledexp.2815/)                                                                              |
+| ChestLock  | 1.21.4* | [link](https://www.spigotmc.org/resources/chest-lock-with-automatic-sorting.81204/)                                                      |
+| Dynmap     | 1.21.7* | [link](https://www.spigotmc.org/resources/dynmap%C2%AE.274/)                                                                             |
+| WorldGuard | 1.21.8  | [link](https://dev.bukkit.org/projects/worldguard)                                                                                       |
 | ImageFrame | 1.21.11 | [link](https://www.spigotmc.org/resources/imageframe-load-images-on-maps-item-frames-support-gifs-map-markers-survival-friendly.106031/) |
-| TreeFeller | 1.21.11 | [link](https://modrinth.com/plugin/thizzyz-tree-feller) |
+| TreeFeller | 1.21.11 | [link](https://modrinth.com/plugin/thizzyz-tree-feller)                                                                                  |
 
 
 ### Supporting plugins
 
-| Name      | MC V.   | Link |
-|-----------|---------|------|
-| WorldEdit | 1.21.11 | [link](https://dev.bukkit.org/projects/worldedit) |
-| LuckPerms | 1.21.11 | [link](https://luckperms.net/download) |
-| TabTPS    | 1.21.11 | [link](https://www.spigotmc.org/resources/tabtps-1-8-8-1-21-show-tps-mspt-and-more-in-the-tab-menu.82528/) |
+| Name      | MC V.   | Link                                                     |
+|-----------|---------|----------------------------------------------------------|
+| WorldEdit | 1.21.11 | [link](https://dev.bukkit.org/projects/worldedit)        |
+| LuckPerms | 1.21.11 | [link](https://luckperms.net/download)                   |
+| TabTPS    | 1.21.11 | [link](https://modrinth.com/plugin/tabtps)               |
 | CMILib    | 1.21.11 | [link](https://www.spigotmc.org/resources/cmilib.87610/) |
 
 

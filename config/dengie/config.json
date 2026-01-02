@@ -1,6 +1,6 @@
 {
   "SERVER_NAME": "dengie",
-  "JAR": "paper-1.21.8.jar",
+  "JAR": "paper-1.21.9.jar",
   "MEMORY": "2G",
   "LOCAL_BACKUP_DIR": "/mnt/ssd/backups",
   "S3_BACKUP_DIR": "s3://public-files.chrislewis.me.uk/chunky-fargate/worlds",
