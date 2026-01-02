@@ -17,8 +17,6 @@ Shown in ascending order of supported Minecraft version.
 
 #1 rule: keep the list small, and avoid mods adding new content (blocks etc).
 
-'*' = works without launch errors on current server version
-
 | Name       | MC V.   | Link                                                                                                                                     |
 |------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
 | todolist   | ?*      | [link](https://github.com/C-D-Lewis/mc-dev/tree/main/todolist)                                                                           |
@@ -28,6 +26,10 @@ Shown in ascending order of supported Minecraft version.
 | WorldGuard | 1.21.8  | [link](https://dev.bukkit.org/projects/worldguard)                                                                                       |
 | ImageFrame | 1.21.11 | [link](https://www.spigotmc.org/resources/imageframe-load-images-on-maps-item-frames-support-gifs-map-markers-survival-friendly.106031/) |
 | TreeFeller | 1.21.11 | [link](https://modrinth.com/plugin/thizzyz-tree-feller)                                                                                  |
+
+> '*' = works without launch errors on current server version
+> 
+> Note: dynmap likes 1.21.10 but not 1.21.11
 
 
 ### Supporting plugins
