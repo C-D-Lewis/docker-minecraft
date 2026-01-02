@@ -196,12 +196,16 @@ InvisibleFrame:
   # Should empty invisible item frames glow
   # Existing frames are not updated until they are interacted with
   GlowEmptyFrames: true
+# ImageFrame's complimentary mod where you can see images in its native resolution in full color
 ImageFrameClient:
   # Changing this value requires a restart
   Enabled: true
+# Which storage system should ImageFrame use
+# Changing this section requires a restart
 Storage:
   # Supported storage systems: file (Default), jdbc
   Type: file
+  # Options are only used if the storage system type requires it, such as jdbc
   Options:
     JdbcUrl: jdbc:mysql://localhost:3306/imageframe
     Username: imageframe

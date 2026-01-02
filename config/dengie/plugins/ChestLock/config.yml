@@ -1,7 +1,7 @@
 ##################################################################################################################################
 #                                                                                                                                #
 #                                                        ChestLock                                                               #
-#                                                         v1.4.5                                                                 #
+#                                                         v1.5.2                                                                 #
 #                        Secure player chests with the easy-to-use Chest Lock Plugin for Spigot servers.                         #
 #                                       Need help? Contact unsocial6136 on Discord                                               #
 #                                                                                                                                #
@@ -13,25 +13,25 @@ settings:
 
   # Automatic update checking
   updateChecker: true
-
+  
   # Automatically lock chests when theyre placed
   autoLock: true
-
+  
   # Changes whether lockable blocks can survive explosions, or not.
   tntProof: true
-
+  
   # Sorts a chest inventory
   # if you use MIDDLE, you have to be holding a item in the inventory or in creative
   # sortBy options 'alphabetical', 'type'
   # sortWith options 'LEFT', 'RIGHT', 'SHIFT_LEFT', 'SHIFT_RIGHT', 'MIDDLE', 'NUMBER_KEY', 'DOUBLE_CLICK', 'SWAP_OFFHAND'
-  sortInventoryEnabled: true
+  sortInventoryEnabled: false
   sortBy: 'type'
   sortWith: 'DOUBLE_CLICK'
-
+  
   # Allows players to Shift + Left Click locks with Redstone to be alerted of intruders.
   intrusionAlerts: true
   alertRadius: 15
-
+  
   # Changes the LockID key in the 'locks.yml'
   # not recommended to change these
   lockID-characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -42,6 +42,7 @@ lockables:
   BARREL: true
   BLAST_FURNACE: true
   CHEST: true
+  COPPER_CHEST: true
   DISPENSER: true
   DROPPER: true
   ENCHANTING_TABLE: true
@@ -80,18 +81,44 @@ messages:
   unshareLock: '&8[&6ChestLock&8] &7You &asuccessfully &7removed ownership for %target%'
   unshareLockTip: '&8[&6ChestLock&8] &7Right click the lock that you would like to &cremove ownership &7for %target%'
 
+  groupCreated: '&8[&6ChestLock&8] &7You created group &a%group%'
+  groupExists: '&8[&6ChestLock&8] &cA group with that name already exists'
+  groupAlreadyIn: '&8[&6ChestLock&8] &cYou are already in group &7%group%'
+  groupDeleted: '&8[&6ChestLock&8] &7You deleted group &c%group%'
+  groupMissing: '&8[&6ChestLock&8] &cGroup &7%group% &cdoes not exist'
+  groupNotOwner: '&8[&6ChestLock&8] &cOnly the group owner can do that'
+  groupInviteSent: '&8[&6ChestLock&8] &7You invited &a%target% &7to group &6%group%'
+  groupInviteReceived: '&8[&6ChestLock&8] &7You were invited to join &6%group% &7by &a%player%&7. Use &6/chestlock group accept %group%&7 or &6/chestlock group decline %group%'
+  groupInviteAlreadySent: '&8[&6ChestLock&8] &c%target% already has a pending invite'
+  groupInviteAccepted: '&8[&6ChestLock&8] &7You joined group &a%group%'
+  groupInviteDeclined: '&8[&6ChestLock&8] &7You declined the invite to &c%group%'
+  groupInviteMissing: '&8[&6ChestLock&8] &cNo pending invite found for &7%group%'
+  groupInviteNone: '&8[&6ChestLock&8] &cYou do not have any pending invites'
+  groupInviteMultiple: '&8[&6ChestLock&8] &cYou have multiple invites. Use /chestlock group accept <group> or decline <group>'
+  groupInvites: '&8[&6ChestLock&8] &7Pending invites: &f%invites%'
+  groupNoInvites: '&8[&6ChestLock&8] &cNo pending invites'
+  groupMemberRemoved: '&8[&6ChestLock&8] &7You &cremoved &7%target% from group &6%group%'
+  groupMemberMissing: '&8[&6ChestLock&8] &c%target% is not in that group'
+  groupMemberExists: '&8[&6ChestLock&8] &cThat player is already in the group'
+  groupTargetAlreadyIn: '&8[&6ChestLock&8] &c%target% is already in group &7%group%'
+  groupCannotRemoveSelf: '&8[&6ChestLock&8] &cUse /chestlock group leave to leave your group'
+  groupLeft: '&8[&6ChestLock&8] &7You left group &c%group%'
+  groupMembers: '&8[&6ChestLock&8] &7Group &6%group% &7members: &f%members%'
+  groupNoMembers: '&8[&6ChestLock&8] &cNo members found'
+  groupNotInGroup: '&8[&6ChestLock&8] &cYou are not currently in a group'
+  
   # Intrusion Alert
   # Shift-Left-Click a chest with redstone in your hand
   intrusionAlert: '&4%player% just attempted to open a %type% you own'
   changeAlertMode: '&8[&6Intrusion Alert&8] &7Active Alert for %type%: &6%mode%'
-
+  
   # Debug Action
   # Shift-Left-Click a chest with nothing in your hand
   getLockID: '&8[&6Lock ID&8] &7%id%'
   getLockType: '&8[&6Type&8] &7%type%'
   getLockPublic: '&8[&6Public&8] &7%public%'
   getLockOwners: '&8[&6Owners&8] &7%owners%'
-
+  
 # not recommended to change these
 actions:
   addOwner: 'addOwner'
@@ -99,6 +126,6 @@ actions:
   destroyLock: 'destroyLock'
   removeOwner: 'removeOwner'
   makePublic: 'makePublic'
-
-# dont change this
-configVersion: 1.1.0
+  
+# dont change this 
+configVersion: 1.2.1
