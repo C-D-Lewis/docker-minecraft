@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 8,
   "name": "plunk",
   "url": "https://i.ibb.co/gVQpc2f/Meta.jpg",

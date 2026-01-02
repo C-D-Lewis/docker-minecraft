@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 24,
   "name": "risingsun",
   "url": "https://s3.us-east-1.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/metro-rising-sun.png",

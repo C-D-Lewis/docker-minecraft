@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 12,
   "name": "sk",
   "url": "https://encrypted-tbn0.gstatic.com/images?q\u003dtbn:ANd9GcRfhrxKPwvPejipPDUDtl8JBRsgmxXmkMte2XxK4X4YC_3OTjqQQzKM2cDVxXy8P9Lw2f8\u0026usqp\u003dCAU",

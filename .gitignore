@@ -75,3 +75,5 @@ config/**/plugins/WorldEdit/schematics
 config/**/plugins/WorldEdit/sessions
 
 config/**/plugins/ImageFrame/upload
+config/**/plugins/ImageFrame/data
+config/**/plugins/ImageFrame/language*

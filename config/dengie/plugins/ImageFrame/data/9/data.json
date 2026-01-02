@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 9,
   "name": "kim",
   "url": "https://media.themoviedb.org/t/p/w235_and_h235_face/85yX3RDu09O4DekBDaI48sF9S2d.jpg",

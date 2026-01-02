@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 13,
   "name": "rob",
   "url": "https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af41723e2-d226-11e9-8d46-8def889b4137?source\u003dnext-article\u0026fit\u003dscale-down\u0026quality\u003dhighest\u0026width\u003d700\u0026dpr\u003d1",

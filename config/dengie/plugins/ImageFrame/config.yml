@@ -86,7 +86,6 @@ Messages:
   UploadLink: '&aOpen {URL} on your browser to upload an image, it is valid for 5 minutes.'
   UploadExpired: '&cImage upload link had expired, please create a new one.'
   GivenInvisibleFrame: '&aGiven {Amount} invisible item frames to {Player}.'
-
 Settings:
   MapItemFormat: '&f{Name} &7({X}, {Y})'
   # Whether empty maps are required to create image maps when not in creative
@@ -159,6 +158,14 @@ Settings:
   # Set this to true if you have corrupted 0 size map data in the world folder (not the ImageFrame plugin folder)
   # Set this to false if your system's file IO is slow
   TryDeleteBlankMapFiles: false
+  # Default language
+  # Translations are crowdsourced from the community!
+  # For supported languages, see https://loohpjames.com/imageframe/languages/
+  # To contribute your language, visit https://crowdin.com/project/imageframe/
+  Language: en_us
+  # Date format used where a time based variable is displayed
+  DateFormat: dd/MM/yyyy HH:mm:ss zzz
+  CombinedByDefault: false
 
 Hooks:
   ViaVersion:
@@ -189,3 +196,15 @@ InvisibleFrame:
   # Should empty invisible item frames glow
   # Existing frames are not updated until they are interacted with
   GlowEmptyFrames: true
+ImageFrameClient:
+  # Changing this value requires a restart
+  Enabled: true
+Storage:
+  # Supported storage systems: file (Default), jdbc
+  Type: file
+  Options:
+    JdbcUrl: jdbc:mysql://localhost:3306/imageframe
+    Username: imageframe
+    Password: imageframe
+    # In Seconds
+    ActivePollInterval: 5

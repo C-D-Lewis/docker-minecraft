@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 2,
   "name": "chapel",
   "url": "https://medievalists.gumlet.io/wp-content/uploads/2014/08/Sistine-Chapel.jpg?format\u003dwebp\u0026compress\u003dtrue\u0026quality\u003d80\u0026w\u003d720\u0026dpr\u003d1",

@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 10,
   "name": "info",
   "url": "https://s3.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/intro-sign.png",

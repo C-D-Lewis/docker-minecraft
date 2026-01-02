@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 5,
   "name": "hom",
   "url": "https://heroesofmirren.com/assets/images/logo-new.png",

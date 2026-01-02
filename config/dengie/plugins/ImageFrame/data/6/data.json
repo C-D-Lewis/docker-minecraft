@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 6,
   "name": "metro_central",
   "url": "https://s3.amazonaws.com/public-files.chrislewis.me.uk/shared/imageframe/metro-central.png",

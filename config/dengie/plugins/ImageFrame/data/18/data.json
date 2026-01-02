@@ -1,5 +1,5 @@
 {
-  "type": "com.loohp.imageframe.objectholders.URLStaticImageMap",
+  "type": "imageframe:url_static",
   "index": 18,
   "name": "2",
   "url": "https://i.ibb.co/4P32JDn/2.jpg",
