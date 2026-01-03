@@ -6,4 +6,5 @@
 *.zip
 *.log
 
+# This is mounted
 config/**/plugins/*

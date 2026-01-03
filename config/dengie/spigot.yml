@@ -101,9 +101,9 @@ world-settings:
       glowberry-modifier: 100
       pitcherplant-modifier: 100
     entity-activation-range:
-      animals: 32
-      monsters: 32
-      raiders: 64
+      animals: 16
+      monsters: 24
+      raiders: 48
       misc: 16
       water: 16
       villagers: 32
@@ -127,7 +127,7 @@ world-settings:
       tick-inactive-villagers: true
       ignore-spectators: false
     entity-tracking-range:
-      players: 128
+      players: 48
       animals: 96
       monsters: 96
       misc: 96

@@ -9,6 +9,7 @@ PORT=$(cat ./config.json | jq -r ".PORT")
 SERVER_NAME=$(cat ./config.json | jq -r ".SERVER_NAME")
 ON_AWS=$(cat ./config.json | jq -r ".ON_AWS")
 CMD=$(cat ./config.json | jq -r ".CMD")
+CUSTOM_ARGS=$(cat ./config.json | jq -r ".CUSTOM_ARGS")
 
 first_launch="false"
 
@@ -56,5 +57,10 @@ if [ "$CMD" != "" ]; then
   exit $?
 else
   echo ">>> No custom start command set, running default start"
-  java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT
+  if [[ -n "$CUSTOM_ARGS" ]]; then
+    echo "Using custom JVM args"
+    java -Xmx$MEMORY -Xms$MEMORY $CUSTOM_ARGS -jar server.jar nogui --port $PORT
+  else
+    java -Xmx$MEMORY -Xms$MEMORY -jar server.jar nogui --port $PORT
+  fi
 fi
