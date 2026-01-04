@@ -6,4 +6,5 @@
 *.zip
 *.log
 
-config/**/plugins/*
+# This is mounted
+servers/**/plugins/*

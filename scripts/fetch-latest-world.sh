@@ -4,15 +4,15 @@ set -eu
 
 SERVER_NAME=$1
 
-ON_AWS=$(cat ./config/$SERVER_NAME/config.json | jq -r ".ON_AWS")
+ON_AWS=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".ON_AWS")
 
 if [[ $ON_AWS != "true" ]]; then
-  if [ ! -d "./config/$SERVER_NAME" ]; then
+  if [ ! -d "./servers/$SERVER_NAME" ]; then
     echo "Invalid SERVER_NAME"
     exit 1
   fi
 fi
-S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
+S3_BACKUP_DIR=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
 
 # Only prompt if not on AWS
 if [ $ON_AWS != "true" ]; then
@@ -43,9 +43,9 @@ cp -r ./temp/world_the_end/* ./world_the_end/ || true
 
 echo ">>> Copying plugin data"
 if [ $ON_AWS == "true" ]; then
-  cp -r "./temp/config/$SERVER_NAME/plugins" "/var/data/efs/" || true
+  cp -r "./temp/servers/$SERVER_NAME/plugins" "/var/data/efs/" || true
 else
-  cp -r "./temp/config/$SERVER_NAME/plugins" "./config/$SERVER_NAME/" || true
+  cp -r "./temp/servers/$SERVER_NAME/plugins" "./servers/$SERVER_NAME/" || true
 fi
 
 echo ">>> Cleaning up"

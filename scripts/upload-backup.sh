@@ -15,12 +15,12 @@ OUTPUT_FILE="$SERVER_NAME-$DATE.zip"
 EFS_DIR=/var/data/efs
 AWS_BIN=$(which aws || echo "/usr/local/bin/aws")
 
-if [ ! -d "./config/$SERVER_NAME" ]; then
+if [ ! -d "./servers/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
   exit 1
 fi
-S3_BACKUP_DIR=$(cat ./config/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
-ON_AWS=$(cat ./config/$SERVER_NAME/config.json | jq -r ".ON_AWS")
+S3_BACKUP_DIR=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".S3_BACKUP_DIR")
+ON_AWS=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".ON_AWS")
 
 # Using EFS for backup, need to restore symlinks in Fargate task
 if [[ $ON_AWS == "true" ]]; then

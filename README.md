@@ -26,7 +26,7 @@ Optionally, for supporting scripts:
 ## Customizations
 
 For each configured server, the files unique to it are stored in a directory
-in `./config`. This allows the project to build and run multiple servers from
+in `./servers`. This allows the project to build and run multiple servers from
 the same set of scripts.
 
 Change the server icon, Message of The Day, and more in the `server.properties`
@@ -42,11 +42,11 @@ datapacks go in `datapacks` - if you want them running, copy them to
 ## Docker build and run
 
 > Once running, all files changed in the container except the mounted `/world*`
-> and `config/$SERVER_NAME/plugins` directories will be lost when the container
+> and `servers/$SERVER_NAME/plugins` directories will be lost when the container
 > exits. Use `docker exec -t -i $CONTAINER_OR_IMAGE /bin/bash` to explore and
 > copy needed files out.
 
-Choose a set of configuration files from `./config` to use when building and
+Choose a set of configuration files from `./servers` to use when building and
 running the server image. For example:
 
 ```shell

@@ -21,7 +21,7 @@ provider "aws" {
 
 # TODO: Can make more use of this config file
 locals {
-  config = jsondecode(file("${path.module}/../config/${var.server_name}/config.json"))
+  config = jsondecode(file("${path.module}/../servers/${var.server_name}/config.json"))
 }
 
 module "infrastructure" {

@@ -7,7 +7,7 @@ export AWS_DEFAULT_REGION="eu-west-2"
 
 SERVER_NAME=$1
 
-if [ ! -d "./config/$SERVER_NAME" ]; then
+if [ ! -d "./servers/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
   exit 1
 fi
