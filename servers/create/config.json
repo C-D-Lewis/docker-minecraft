@@ -7,5 +7,6 @@
   "PORT": "25503",
   "DYNMAP_PORT": "",
   "ON_AWS": "false",
-  "CMD": "./start-forge.sh"
+  "CMD": "./start-forge.sh",
+  "CUSTOM_ARGS": ""
 }
