@@ -46,6 +46,8 @@ RUN ./fetch-server.sh
 ADD ./scripts ./scripts
 
 # Copy all server-specific files the MC server expects at the top
+# For PaperMC, this also copies the 'config' dif
+# TODO: Replace my 'config' name with 'servers' for clarity
 ADD ./config/${SERVER_NAME} .
 
 # Copy config dir in places scripts expect it
