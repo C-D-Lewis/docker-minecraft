@@ -19,9 +19,7 @@ into AWS.
 
 Optionally, for supporting scripts:
 
-3. Install AWS CLI v2.
-
-4. Install node 20 with `nvm`.
+1. Install AWS CLI v2.
 
 ## Customizations
 
