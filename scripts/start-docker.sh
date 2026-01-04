@@ -4,12 +4,12 @@ set -eu
 
 SERVER_NAME=$1
 
-if [ ! -d "./config/$SERVER_NAME" ]; then
+if [ ! -d "./servers/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
   exit 1
 fi
-PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".PORT")
-DYNMAP_PORT=$(cat ./config/$SERVER_NAME/config.json | jq -r ".DYNMAP_PORT")
+PORT=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".PORT")
+DYNMAP_PORT=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".DYNMAP_PORT")
 
 # Make sure the world directory exists to mount and persist to
 # Also make libraries dir in case a modded server uses it (Dockerfile expects it)
@@ -30,5 +30,5 @@ docker run --rm \
   -v ./world:/server/world \
   -v ./world_nether:/server/world_nether \
   -v ./world_the_end:/server/world_the_end \
-  -v ./config/$SERVER_NAME/plugins:/server/plugins \
+  -v ./servers/$SERVER_NAME/plugins:/server/plugins \
   -t $SERVER_NAME 2>&1 | tee docker-minecraft.log

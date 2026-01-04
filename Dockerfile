@@ -36,7 +36,7 @@ RUN test -n "$SERVER_NAME" || (echo "SERVER_NAME not set" && false)
 WORKDIR /server
 
 # Copy server-specific config first
-ADD ./config/${SERVER_NAME}/config.json .
+ADD ./servers/${SERVER_NAME}/config.json .
 
 # Download required minecraft server
 ADD ./scripts/fetch-server.sh .
@@ -47,11 +47,11 @@ ADD ./scripts ./scripts
 
 # Copy all server-specific files the MC server expects at the top
 # For PaperMC, this also copies the 'config' dif
-# TODO: Replace my 'config' name with 'servers' for clarity
-ADD ./config/${SERVER_NAME} .
+ADD ./servers/${SERVER_NAME} .
 
 # Copy config dir in places scripts expect it
-ADD ./config/${SERVER_NAME} ./config/${SERVER_NAME}/
+# TODO: Can this be rolled into the above layer?
+ADD ./servers/${SERVER_NAME} ./servers/${SERVER_NAME}/
 
 # Remove any added plugins before being mounted
 RUN rm -rf ./plugins

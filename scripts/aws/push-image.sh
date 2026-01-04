@@ -3,7 +3,7 @@
 set -eu
 
 SERVER_NAME=$1
-if [ ! -d "./config/$SERVER_NAME" ]; then
+if [ ! -d "./servers/$SERVER_NAME" ]; then
   echo "Invalid SERVER_NAME"
   exit 1
 fi

@@ -19,61 +19,61 @@ backups
 ./whitelist.json
 
 # Paper
-config/**/plugins/.paper-remapped
+servers/**/plugins/.paper-remapped
 
 # Files inside a server mounted plugins directory
 # Need a better solution really
-config/**/plugins/CraftableSaddles
-config/**/plugins/PluginMetrics
-config/**/plugins/bStats
-config/**/plugins/CMILib
-config/**/plugins/spark
-config/**/plugins/TabTPS
-config/**/plugins/TodoList
+servers/**/plugins/CraftableSaddles
+servers/**/plugins/PluginMetrics
+servers/**/plugins/bStats
+servers/**/plugins/CMILib
+servers/**/plugins/spark
+servers/**/plugins/TabTPS
+servers/**/plugins/TodoList
 
-config/**/plugins/ChestLock/locks.yml
+servers/**/plugins/ChestLock/locks.yml
 
-config/**/plugins/dynmap/colorschemes
-config/**/plugins/dynmap/custom-lightings.txt
-config/**/plugins/dynmap/custom-perspectives.txt
-config/**/plugins/dynmap/custom-shaders.txt
-config/**/plugins/dynmap/export
-config/**/plugins/dynmap/ids-by-ip.txt
-config/**/plugins/dynmap/import
-config/**/plugins/dynmap/lightings.txt
-config/**/plugins/dynmap/markers
-config/**/plugins/dynmap/markers.yml
-config/**/plugins/dynmap/perspectives.txt
-config/**/plugins/dynmap/renderdata
-config/**/plugins/dynmap/shaders.txt
-config/**/plugins/dynmap/templates
-config/**/plugins/dynmap/texturepacks
-config/**/plugins/dynmap/version.txt
-config/**/plugins/dynmap/web
-config/**/plugins/dynmap/*.pending
-config/**/plugins/dynmap/worlds.txt
+servers/**/plugins/dynmap/colorschemes
+servers/**/plugins/dynmap/custom-lightings.txt
+servers/**/plugins/dynmap/custom-perspectives.txt
+servers/**/plugins/dynmap/custom-shaders.txt
+servers/**/plugins/dynmap/export
+servers/**/plugins/dynmap/ids-by-ip.txt
+servers/**/plugins/dynmap/import
+servers/**/plugins/dynmap/lightings.txt
+servers/**/plugins/dynmap/markers
+servers/**/plugins/dynmap/markers.yml
+servers/**/plugins/dynmap/perspectives.txt
+servers/**/plugins/dynmap/renderdata
+servers/**/plugins/dynmap/shaders.txt
+servers/**/plugins/dynmap/templates
+servers/**/plugins/dynmap/texturepacks
+servers/**/plugins/dynmap/version.txt
+servers/**/plugins/dynmap/web
+servers/**/plugins/dynmap/*.pending
+servers/**/plugins/dynmap/worlds.txt
 
-config/**/plugins/BottledExp/blocks.yml
-config/**/plugins/BottledExp/Translations
-config/**/plugins/BottledExp/Locale*
-config/**/plugins/BottledExp/recipes.yml
+servers/**/plugins/BottledExp/blocks.yml
+servers/**/plugins/BottledExp/Translations
+servers/**/plugins/BottledExp/Locale*
+servers/**/plugins/BottledExp/recipes.yml
 
-config/**/plugins/WorldGuard/cache
-config/**/plugins/WorldGuard/worlds
+servers/**/plugins/WorldGuard/cache
+servers/**/plugins/WorldGuard/worlds
 
-config/**/plugins/LuckPerms/libs
-config/**/plugins/LuckPerms/translations
-config/**/plugins/LuckPerms/yaml-storage/tracks
-config/**/plugins/LuckPerms/yaml-storage/actions.txt
-config/**/plugins/LuckPerms/yaml-storage/uuidcache.txt
-config/**/plugins/LuckPerms/contexts.json
-config/**/plugins/LuckPerms/*.db
+servers/**/plugins/LuckPerms/libs
+servers/**/plugins/LuckPerms/translations
+servers/**/plugins/LuckPerms/yaml-storage/tracks
+servers/**/plugins/LuckPerms/yaml-storage/actions.txt
+servers/**/plugins/LuckPerms/yaml-storage/uuidcache.txt
+servers/**/plugins/LuckPerms/contexts.json
+servers/**/plugins/LuckPerms/*.db
 
-config/**/plugins/WorldEdit/.*
-config/**/plugins/WorldEdit/assets
-config/**/plugins/WorldEdit/schematics
-config/**/plugins/WorldEdit/sessions
+servers/**/plugins/WorldEdit/.*
+servers/**/plugins/WorldEdit/assets
+servers/**/plugins/WorldEdit/schematics
+servers/**/plugins/WorldEdit/sessions
 
-config/**/plugins/ImageFrame/upload
-config/**/plugins/ImageFrame/data
-config/**/plugins/ImageFrame/language*
+servers/**/plugins/ImageFrame/upload
+servers/**/plugins/ImageFrame/data
+servers/**/plugins/ImageFrame/language*
