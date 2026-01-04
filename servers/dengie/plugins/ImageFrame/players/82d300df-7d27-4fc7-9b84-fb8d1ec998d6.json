@@ -1,6 +1,7 @@
 {
   "uuid": "82d300df-7d27-4fc7-9b84-fb8d1ec998d6",
   "preferences": {
-    "viewAnimatedMaps": "unset"
+    "viewAnimatedMaps": "unset",
+    "language": "unset"
   }
 }
