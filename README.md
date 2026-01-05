@@ -31,7 +31,7 @@ Change the server icon, Message of The Day, and more in the `server.properties`
 file.
 
 Change the amount of memory allocated in `config.json` to be no more than
-75% available on the system.
+75% available on the system. Other options are available.
 
 Mods for Paper/Bukkit (nominal choice of server) go in `plugins`, and Minecraft
 datapacks go in `datapacks` - if you want them running, copy them to
@@ -45,10 +45,10 @@ datapacks go in `datapacks` - if you want them running, copy them to
 > copy needed files out.
 
 Choose a set of configuration files from `./servers` to use when building and
-running the server image. For example:
+running the server image:
 
 ```shell
-./scripts/start-docker.sh test
+./scripts/start-docker.sh $NAME
 ```
 
 Add to crontab to run on boot with `sudo crontab -e`, assuming a location of
@@ -67,13 +67,7 @@ To safely stop the server, log in as an Op user and run the `/stop` command.
 If not possible, force-stop the container:
 
 ```
-docker ps
-```
-
-With the container ID:
-
-```
-docker stop $CONTAINER_ID
+docker stop $NAME
 ```
 
 ## Backups
