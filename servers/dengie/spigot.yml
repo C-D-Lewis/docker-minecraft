@@ -101,8 +101,8 @@ world-settings:
       glowberry-modifier: 100
       pitcherplant-modifier: 100
     entity-activation-range:
-      animals: 16
-      monsters: 24
+      animals: 32
+      monsters: 32
       raiders: 48
       misc: 16
       water: 16
@@ -134,8 +134,8 @@ world-settings:
       display: 128
       other: 64
     ticks-per:
-      hopper-transfer: 16
-      hopper-check: 8
+      hopper-transfer: 8
+      hopper-check: 1
     hopper-amount: 1
     hopper-can-load-chunks: false
     dragon-death-sound-radius: 0

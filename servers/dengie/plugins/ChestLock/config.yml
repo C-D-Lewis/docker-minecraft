@@ -1,9 +1,9 @@
 ##################################################################################################################################
 #                                                                                                                                #
 #                                                        ChestLock                                                               #
-#                                                         v1.5.2                                                                 #
+#                                                         v1.5.3                                                                 #
 #                        Secure player chests with the easy-to-use Chest Lock Plugin for Spigot servers.                         #
-#                                       Need help? Contact unsocial6136 on Discord                                               #
+#                                              Need help? discord.gg/BGurTEm2nj                                                  #
 #                                                                                                                                #
 ##################################################################################################################################
 
@@ -19,6 +19,14 @@ settings:
   
   # Changes whether lockable blocks can survive explosions, or not.
   tntProof: true
+
+  # Hopper protection controls for InventoryMoveItemEvent
+  hopper-protection: true
+  hopper-minecart-protection: true
+  hopper-check-source: true
+  hopper-check-destination: true
+  # Cache TTL in ticks for hopper decisions (0 disables the cache, max 200)
+  hopper-cache-ttl-ticks: 20
   
   # Sorts a chest inventory
   # if you use MIDDLE, you have to be holding a item in the inventory or in creative
@@ -128,4 +136,4 @@ actions:
   makePublic: 'makePublic'
   
 # dont change this 
-configVersion: 1.2.1
+configVersion: 1.3.0
