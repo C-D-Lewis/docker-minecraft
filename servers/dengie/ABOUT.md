@@ -20,16 +20,13 @@ Shown in ascending order of supported Minecraft version.
 | Name       | MC V.   | Link                                                                                                                                     |
 |------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
 | todolist   | ?*      | [link](https://github.com/C-D-Lewis/mc-dev/tree/main/todolist)                                                                           |
-| BottledExp | 1.21.4* | [link](https://www.spigotmc.org/resources/bottledexp.2815/)                                                                              |
 | ChestLock  | 1.21.4* | [link](https://www.spigotmc.org/resources/chest-lock-with-automatic-sorting.81204/)                                                      |
-| Dynmap     | 1.21.7* | [link](https://www.spigotmc.org/resources/dynmap%C2%AE.274/)                                                                             |
-| WorldGuard | 1.21.8  | [link](https://dev.bukkit.org/projects/worldguard)                                                                                       |
+| WorldGuard | 1.21.11 | [link](https://dev.bukkit.org/projects/worldguard)                                                                                       |
+| Dynmap     | 1.21.11 | [link](https://www.spigotmc.org/resources/dynmap%C2%AE.274/)                                                                             |
 | ImageFrame | 1.21.11 | [link](https://www.spigotmc.org/resources/imageframe-load-images-on-maps-item-frames-support-gifs-map-markers-survival-friendly.106031/) |
 | TreeFeller | 1.21.11 | [link](https://modrinth.com/plugin/thizzyz-tree-feller)                                                                                  |
 
 > '*' = works without launch errors on current server version
-> 
-> Note: dynmap likes 1.21.10 but not 1.21.11
 
 
 ### Supporting plugins

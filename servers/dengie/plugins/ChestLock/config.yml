@@ -1,7 +1,7 @@
 ##################################################################################################################################
 #                                                                                                                                #
 #                                                        ChestLock                                                               #
-#                                                         v1.5.3                                                                 #
+#                                                         v1.5.5                                                                 #
 #                        Secure player chests with the easy-to-use Chest Lock Plugin for Spigot servers.                         #
 #                                              Need help? discord.gg/BGurTEm2nj                                                  #
 #                                                                                                                                #
@@ -13,6 +13,9 @@ settings:
 
   # Automatic update checking
   updateChecker: true
+
+  # Prefix for all messages. Leave blank to disable.
+  prefix: '&8[&6ChestLock&8] &7'
   
   # Automatically lock chests when theyre placed
   autoLock: true
@@ -27,6 +30,9 @@ settings:
   hopper-check-destination: true
   # Cache TTL in ticks for hopper decisions (0 disables the cache, max 200)
   hopper-cache-ttl-ticks: 20
+  # How to treat pre-1.5.3 hoppers that do not have an owner tag when moving
+  # Options: ALLOW (allow and leave untagged), DENY (cancel), TAG_ON_USE (tag then allow)
+  untagged-hoppers: ALLOW
   
   # Sorts a chest inventory
   # if you use MIDDLE, you have to be holding a item in the inventory or in creative
@@ -62,70 +68,92 @@ lockables:
   SMOKER: true
   TRAPPED_CHEST: true
 
-messages:
-  adjacentToLock: '&8[&6ChestLock&8] &7You &ccant &7create locks adjacent to locks you dont own'
-  bypassOff: '&8[&6ChestLock&7-&6A&8] &cDisabled &7bypass mode'
-  bypassOn: '&8[&6ChestLock&7-&6A&8] &aEnabled &7bypass mode'
-  bypassWarning: '&cYou are currently bypassing ChestLock controller so no lock was created, use &7/chestlock bypass &cto create locks again'
-  cancelAction: '&8[&6ChestLock&8] &cCancelling Action&8: &7%action%'
-  claimLock: '&8[&6ChestLock&8] &7You &aclaimed &7a %type% as your lock'
-  claimLockTip: '&8[&6ChestLock&8] &7Right click the lock that you would like to &aclaim ownership &7of'
-  commandTimeout: '&8[&6ChestLock&8] &cCommand Timeout&8: &7%action%'
-  createLock: '&8[&6ChestLock&8] &7You &acreated &7a lock'
-  destroyLockTip: '&8[&6ChestLock&8] &7Right click the lock that you would like to &cdestroy'
-  destroyedLock: '&8[&6ChestLock&8] &7%type% lock has been &cdestroyed&7'
-  invalidClaimType: '&8[&6ChestLock&8] &7This &ccant &7be claimed'
-  invalidInstance: '&8[&6ChestLock&8] &cInvalid user instance, this command can only be ran by Players'
-  invalidLock: '&8[&6ChestLock&8] &cInvalid lock'
-  invalidOwner: '&8[&6ChestLock&8] &7This lock is owned by &c%player%'
-  invalidShareOwner: '&8[&6ChestLock&8] &c%target% is not an owner of this lock'
-  makePrivate: '&8[&6ChestLock&8] &7You made this lock &cprivate'
-  makePublic: '&8[&6ChestLock&8] &7You made this lock &apublic'
-  makePublicTip: '&8[&6ChestLock&8] &7Right click the lock that you would like to &amake public'
-  noPermission: '&8[&6ChestLock&8] &cYou dont have permission to do that'
-  removeLock: '&8[&6ChestLock&8] &7You &cremoved &7a lock'
-  shareLock: '&8[&6ChestLock&8] &7You &asuccessfully &7shared ownership with %target%'
-  shareLockTip: '&8[&6ChestLock&8] &7Right click the lock that you would like to &agrant ownership &7for %target%'
-  unshareLock: '&8[&6ChestLock&8] &7You &asuccessfully &7removed ownership for %target%'
-  unshareLockTip: '&8[&6ChestLock&8] &7Right click the lock that you would like to &cremove ownership &7for %target%'
+lockables-doors:
+  OAK_DOOR: false
+  SPRUCE_DOOR: false
+  BIRCH_DOOR: false
+  JUNGLE_DOOR: false
+  ACACIA_DOOR: false
+  DARK_OAK_DOOR: false
+  MANGROVE_DOOR: false
+  CHERRY_DOOR: false
+  BAMBOO_DOOR: false
+  CRIMSON_DOOR: false
+  WARPED_DOOR: false
+  IRON_DOOR: false
+  COPPER_DOOR: false
+  EXPOSED_COPPER_DOOR: false
+  WEATHERED_COPPER_DOOR: false
+  OXIDIZED_COPPER_DOOR: false
+  WAXED_COPPER_DOOR: false
+  WAXED_EXPOSED_COPPER_DOOR: false
+  WAXED_WEATHERED_COPPER_DOOR: false
+  WAXED_OXIDIZED_COPPER_DOOR: false
 
-  groupCreated: '&8[&6ChestLock&8] &7You created group &a%group%'
-  groupExists: '&8[&6ChestLock&8] &cA group with that name already exists'
-  groupAlreadyIn: '&8[&6ChestLock&8] &cYou are already in group &7%group%'
-  groupDeleted: '&8[&6ChestLock&8] &7You deleted group &c%group%'
-  groupMissing: '&8[&6ChestLock&8] &cGroup &7%group% &cdoes not exist'
-  groupNotOwner: '&8[&6ChestLock&8] &cOnly the group owner can do that'
-  groupInviteSent: '&8[&6ChestLock&8] &7You invited &a%target% &7to group &6%group%'
-  groupInviteReceived: '&8[&6ChestLock&8] &7You were invited to join &6%group% &7by &a%player%&7. Use &6/chestlock group accept %group%&7 or &6/chestlock group decline %group%'
-  groupInviteAlreadySent: '&8[&6ChestLock&8] &c%target% already has a pending invite'
-  groupInviteAccepted: '&8[&6ChestLock&8] &7You joined group &a%group%'
-  groupInviteDeclined: '&8[&6ChestLock&8] &7You declined the invite to &c%group%'
-  groupInviteMissing: '&8[&6ChestLock&8] &cNo pending invite found for &7%group%'
-  groupInviteNone: '&8[&6ChestLock&8] &cYou do not have any pending invites'
-  groupInviteMultiple: '&8[&6ChestLock&8] &cYou have multiple invites. Use /chestlock group accept <group> or decline <group>'
-  groupInvites: '&8[&6ChestLock&8] &7Pending invites: &f%invites%'
-  groupNoInvites: '&8[&6ChestLock&8] &cNo pending invites'
-  groupMemberRemoved: '&8[&6ChestLock&8] &7You &cremoved &7%target% from group &6%group%'
-  groupMemberMissing: '&8[&6ChestLock&8] &c%target% is not in that group'
-  groupMemberExists: '&8[&6ChestLock&8] &cThat player is already in the group'
-  groupTargetAlreadyIn: '&8[&6ChestLock&8] &c%target% is already in group &7%group%'
-  groupCannotRemoveSelf: '&8[&6ChestLock&8] &cUse /chestlock group leave to leave your group'
-  groupLeft: '&8[&6ChestLock&8] &7You left group &c%group%'
-  groupMembers: '&8[&6ChestLock&8] &7Group &6%group% &7members: &f%members%'
-  groupNoMembers: '&8[&6ChestLock&8] &cNo members found'
-  groupNotInGroup: '&8[&6ChestLock&8] &cYou are not currently in a group'
+messages:
+  adjacentToLock: '&7You &ccant &7create locks adjacent to locks you dont own'
+  bypassOff: '&7[&6A&7] &cDisabled &7bypass mode'
+  bypassOn: '&7[&6A&7] &aEnabled &7bypass mode'
+  bypassWarning: '&cYou are currently bypassing ChestLock controller so no lock was created, use &7/chestlock bypass &cto create locks again'
+  cancelAction: '&cCancelling Action&8: &7%action%'
+  claimLock: '&7You &aclaimed &7a %type% as your lock'
+  claimLockTip: '&7Right click the lock that you would like to &aclaim ownership &7of'
+  commandTimeout: '&cCommand Timeout&8: &7%action%'
+  createLock: '&7You &acreated &7a lock'
+  destroyLockTip: '&7Right click the lock that you would like to &cdestroy'
+  destroyedLock: '&7%type% lock has been &cdestroyed&7'
+  invalidClaimType: '&7This &ccant &7be claimed'
+  invalidInstance: '&cInvalid user instance, this command can only be ran by Players'
+  invalidLock: '&cInvalid lock'
+  invalidOwner: '&7This lock is owned by &c%player%'
+  invalidShareOwner: '&c%target% is not an owner of this lock'
+  makePrivate: '&7You made this lock &cprivate'
+  makePublic: '&7You made this lock &apublic'
+  makePublicTip: '&7Right click the lock that you would like to &amake public'
+  noPermission: '&cYou dont have permission to do that'
+  removeLock: '&7You &cremoved &7a lock'
+  shareLock: '&7You &asuccessfully &7shared ownership with %target%'
+  shareLockTip: '&7Right click the lock that you would like to &agrant ownership &7for %target%'
+  unshareLock: '&7You &asuccessfully &7removed ownership for %target%'
+  unshareLockTip: '&7Right click the lock that you would like to &cremove ownership &7for %target%'
+
+  groupCreated: '&7You created group &a%group%'
+  groupExists: '&cA group with that name already exists'
+  groupAlreadyIn: '&cYou are already in group &7%group%'
+  groupDeleted: '&7You deleted group &c%group%'
+  groupMissing: '&cGroup &7%group% &cdoes not exist'
+  groupNotOwner: '&cOnly the group owner can do that'
+  groupInviteSent: '&7You invited &a%target% &7to group &6%group%'
+  groupInviteReceived: '&7You were invited to join &6%group% &7by &a%player%&7. Use &6/chestlock group accept %group%&7 or &6/chestlock group decline %group%'
+  groupInviteAlreadySent: '&c%target% already has a pending invite'
+  groupInviteAccepted: '&7You joined group &a%group%'
+  groupInviteDeclined: '&7You declined the invite to &c%group%'
+  groupInviteMissing: '&cNo pending invite found for &7%group%'
+  groupInviteNone: '&cYou do not have any pending invites'
+  groupInviteMultiple: '&cYou have multiple invites. Use /chestlock group accept <group> or decline <group>'
+  groupInvites: '&7Pending invites: &f%invites%'
+  groupNoInvites: '&cNo pending invites'
+  groupMemberRemoved: '&7You &cremoved &7%target% from group &6%group%'
+  groupMemberMissing: '&c%target% is not in that group'
+  groupMemberExists: '&cThat player is already in the group'
+  groupTargetAlreadyIn: '&c%target% is already in group &7%group%'
+  groupCannotRemoveSelf: '&cUse /chestlock group leave to leave your group'
+  groupLeft: '&7You left group &c%group%'
+  groupMembers: '&7Group &6%group% &7members: &f%members%'
+  groupNoMembers: '&cNo members found'
+  groupNotInGroup: '&cYou are not currently in a group'
   
   # Intrusion Alert
   # Shift-Left-Click a chest with redstone in your hand
   intrusionAlert: '&4%player% just attempted to open a %type% you own'
-  changeAlertMode: '&8[&6Intrusion Alert&8] &7Active Alert for %type%: &6%mode%'
+  changeAlertMode: '&7Active Alert for %type%: &6%mode%'
   
   # Debug Action
   # Shift-Left-Click a chest with nothing in your hand
-  getLockID: '&8[&6Lock ID&8] &7%id%'
-  getLockType: '&8[&6Type&8] &7%type%'
-  getLockPublic: '&8[&6Public&8] &7%public%'
-  getLockOwners: '&8[&6Owners&8] &7%owners%'
+  getLockID: '&7%id%'
+  getLockType: '&7%type%'
+  getLockPublic: '&7%public%'
+  getLockOwners: '&7%owners%'
   
 # not recommended to change these
 actions:
@@ -136,4 +164,4 @@ actions:
   makePublic: 'makePublic'
   
 # dont change this 
-configVersion: 1.3.0
+configVersion: 1.4.1
