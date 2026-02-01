@@ -3,6 +3,7 @@
 set -eu
 
 SERVER_NAME=$1
+USE_EXISTING_ZIP=${2:-"false"}
 
 ON_AWS=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".ON_AWS")
 
@@ -27,8 +28,12 @@ if [ $ON_AWS != "true" ]; then
   rm -rf ./world_the_end
 fi
 
-echo ">>> Downloading from S3"
-$(which aws) s3 cp "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip" .
+if [ "$USE_EXISTING_ZIP" != "true" ]; then
+  echo ">>> Downloading latest world backup from S3"
+  $(which aws) s3 cp "$S3_BACKUP_DIR/$SERVER_NAME-latest.zip" .
+else
+  echo ">>> Using existing zip file"
+fi
 
 echo ">>> Unzipping world"
 unzip $SERVER_NAME-latest.zip -d ./temp
