@@ -9,7 +9,14 @@ Dengie Minecraft Spigot modded server from
 Datapacks need to be copied to `world/datapacks`.
 
 * [Leash Villager](https://www.curseforge.com/minecraft/texture-packs/leash-villager)
-
+* From [Vanilla Tweaks](https://vanillatweaks.net/picker/datapacks/):
+  * Creepers explode confetti
+  * Shulkers drop 2x shells
+  * Ender chest always drops
+  * Fast leaf decay
+  * Glass always drops
+  * Cut down entire trees
+  * Bottle XP (right click enchant table to fill)
 
 ## Plugins
 
@@ -24,7 +31,6 @@ Shown in ascending order of supported Minecraft version.
 | WorldGuard | 1.21.11 | [link](https://dev.bukkit.org/projects/worldguard)                                                                                       |
 | Dynmap     | 1.21.11 | [link](https://www.spigotmc.org/resources/dynmap%C2%AE.274/)                                                                             |
 | ImageFrame | 1.21.11 | [link](https://www.spigotmc.org/resources/imageframe-load-images-on-maps-item-frames-support-gifs-map-markers-survival-friendly.106031/) |
-| TreeFeller | 1.21.11 | [link](https://modrinth.com/plugin/thizzyz-tree-feller)                                                                                  |
 
 > '*' = works without launch errors on current server version
 
