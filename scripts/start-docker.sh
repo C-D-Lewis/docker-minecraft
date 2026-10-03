@@ -10,13 +10,16 @@ if [ ! -d "./servers/$SERVER_NAME" ]; then
 fi
 PORT=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".PORT")
 DYNMAP_PORT=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".DYNMAP_PORT")
+JAVA_VERSION=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".JAVA_VERSION")
 
 # Make sure the world directory exists to mount and persist to
 # Also make libraries dir in case a modded server uses it (Dockerfile expects it)
 mkdir -p world libraries
 
 # Build the image
-docker build -t $SERVER_NAME . --build-arg SERVER_NAME=$SERVER_NAME
+docker build -t $SERVER_NAME . \
+  --build-arg SERVER_NAME=$SERVER_NAME \
+  --build-arg JAVA_VERSION=$JAVA_VERSION
 
 # Run the image with exposed:
 # - Minecraft server port

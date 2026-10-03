@@ -1,6 +1,7 @@
 FROM debian:bookworm-slim AS platform
 
 ARG ON_AWS=false
+ARG JAVA_VERSION
 
 RUN apt update --fix-missing && \
   apt upgrade -y && \
@@ -10,7 +11,7 @@ RUN apt update --fix-missing && \
 
 # Install java 22 for MC 1.21.1+
 ADD ./scripts/install-platform-java.sh .
-RUN ./install-platform-java.sh
+RUN ./install-platform-java.sh $JAVA_VERSION
 RUN java --version || (echo "java was not found" && false)
 
 RUN if [ "$ON_AWS" = "true" ]; then \
