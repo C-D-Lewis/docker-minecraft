@@ -1,5 +1,10 @@
 # hom
 
+Heroes of Mirren Minecraft server.
+
+**Server**: Vanilla
+**MC Version**: `26.3`
+
 * [Locations](#locations)
 * [Nether Road Map](#nether-road-map)
 
