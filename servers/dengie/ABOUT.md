@@ -22,9 +22,9 @@ Datapacks need to be copied to `world/datapacks`.
 
 ## Plugins
 
-Shown in ascending order of supported Minecraft version.
-
-#1 rule: keep the list small, and avoid mods adding new content (blocks etc).
+These Paper/Bukkit plugins add more features. #1 rule: keep the list small, and
+avoid mods adding new content (blocks etc) in case they become unmaintained and
+need to be removed to allow a Minecraft version upgrade.
 
 | Name       | MC Ver.        | Link                                                                                                                                     |
 |------------|----------------|------------------------------------------------------------------------------------------------------------------------------------------|
@@ -49,16 +49,25 @@ Shown in ascending order of supported Minecraft version.
 
 ## Group permissions
 
+LuckPerms has the following permissions groups set up.
+
 * `default`
   * `bottledexp.*`
   * `chestlock.*`
   * `treefeller.*`
-  * `imageframe.create`
   * `imageframe.clone`
-  * `imageframe.select`
+  * `imageframe.create`
+  * `imageframe.get`
+  * `imageframe.info`
+  * `imageframe.list`
   * `imageframe.marker`
   * `imageframe.refresh`
   * `imageframe.rename`
-  * `imageframe.info`
-  * `imageframe.list`
-  * `imageframe.get`
+  * `imageframe.select`
+
+* `managers`
+  * `minecraft.command.whitelist`
+
+* `hosts`
+  * `minecraft.command.summon`
+  * `minecraft.command.tp`
