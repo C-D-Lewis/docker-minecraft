@@ -2,8 +2,9 @@
 
 Dengie Minecraft server.
 
-**Server**: PaperMC
-**MC Version**: `1.21.11`
+| Server  | MC Version |
+|---------|------------|
+| PaperMC | `1.21.11`  |
 
 ## Datapacks
 
@@ -38,12 +39,12 @@ Shown in ascending order of supported Minecraft version.
 
 ### Supporting plugins
 
-| Name      | MC Ver.        | Link                                                     |
-|-----------|----------------|----------------------------------------------------------|
+| Name      | MC Ver.            | Link                                                     |
+|-----------|--------------------|----------------------------------------------------------|
 | WorldEdit | 1.21.11 (26.**2**) | [link](https://dev.bukkit.org/projects/worldedit)        |
-| LuckPerms | 1.21.11 (26.3) | [link](https://luckperms.net/download)                   |
-| TabTPS    | 1.21.11 (26.3) | [link](https://modrinth.com/plugin/tabtps)               |
-| CMILib    | 1.21.11 (26.3) | [link](https://www.spigotmc.org/resources/cmilib.87610/) |
+| LuckPerms | 1.21.11 (26.3)     | [link](https://luckperms.net/download)                   |
+| TabTPS    | 1.21.11 (26.3)     | [link](https://modrinth.com/plugin/tabtps)               |
+| CMILib    | 1.21.11 (26.3)     | [link](https://www.spigotmc.org/resources/cmilib.87610/) |
 
 
 ## Group permissions
