@@ -1,158 +1,79 @@
-# docker-minecraft
+# dengie
 
-Standalone Docker-based Minecraft server setup with backups, primarily for
-Raspberry Pi 5 with 8 GB of RAM. Also contains Terraform scripts for deployment
-into AWS.
+Dengie Minecraft server.
 
-* [Prerequisites](#prerequisites)
-* [Customizations](#customizations)
-* [Docker build and run](#docker-build-and-run)
-* [Stopping the server](#stopping-the-server)
-* [Backups](#backups)
-* [AWS Deployment](#aws-deployment)
+| Server  | MC Version |
+|---------|------------|
+| PaperMC | `26.3`     |
 
-## Prerequisites
+## Datapacks
 
-1. Install this repo to a fast SSD located at `/mnt/ssd`.
+Datapacks need to be copied to `world/datapacks`.
 
-2. Install [Docker](https://docs.docker.com/engine/install/debian/) for aarch64.
+* [Leash Villager](https://www.curseforge.com/minecraft/texture-packs/leash-villager)
+* From [Vanilla Tweaks](https://vanillatweaks.net/picker/datapacks/):
+  * Creepers explode confetti
+  * Shulkers drop 2x shells
+  * Ender chest always drops
+  * Fast leaf decay
+  * Glass always drops
+  * Cut down entire trees
+  * Bottle XP (right click enchant table to fill)
 
-Optionally, for supporting scripts:
+## Plugins
 
-1. Install AWS CLI v2.
+These Paper/Bukkit plugins add more features and must support the current server
+Minecraft version. If in doubt, launch in Docker locally and check the logs for
+any errors or exceptions which might indicate incompatibility or data errors.
 
-## Customizations
+**#1 rule**: keep the list small, and avoid mods adding new content (blocks etc)
+in case they become unmaintained and need to be removed to allow a Minecraft
+version upgrade.
 
-For each configured server, the files unique to it are stored in a directory
-in `./servers`. This allows the project to build and run multiple servers from
-the same set of scripts.
+| Name       | MC Ver.  | Link                                                                                                                                     |
+|------------|----------|------------------------------------------------------------------------------------------------------------------------------------------|
+| todolist   | ?*       | [link](https://github.com/C-D-Lewis/mc-dev/tree/main/todolist)                                                                           |
+| ChestLock  | 1.21.11* | [link](https://www.spigotmc.org/resources/chest-lock-with-automatic-sorting.81204/)                                                      |
+| WorldGuard | 26.3     | [link](https://dev.bukkit.org/projects/worldguard)                                                                                       |
+| Dynmap     | 26.3  | [link](https://github.com/webbukkit/dynmap)                                                                             |
+| ImageFrame | 26.3     | [link](https://www.spigotmc.org/resources/imageframe-load-images-on-maps-item-frames-support-gifs-map-markers-survival-friendly.106031/) |
 
-Change the server icon, Message of The Day, and more in the `server.properties`
-file.
+> '*' = works without launch errors on this server version
 
-Change the amount of memory allocated in `config.json` to be no more than
-75% available on the system. Other options are available.
 
-Mods for Paper/Bukkit (nominal choice of server) go in `plugins`, and Minecraft
-datapacks go in `datapacks` - if you want them running, copy them to
-`world/datapacks` once a world is created.
+### Supporting plugins
 
-## Docker build and run
+These plugins are required by the main feature plugins in the table above.
 
-> Once running, all files changed in the container except the mounted `/world*`
-> and `servers/$SERVER_NAME/plugins` directories will be lost when the container
-> exits. Use `docker exec -t -i $CONTAINER_OR_IMAGE /bin/bash` to explore and
-> copy needed files out.
+| Name      | MC Ver. | Link                                                     |
+|-----------|---------|----------------------------------------------------------|
+| WorldEdit | 26.3    | [link](https://dev.bukkit.org/projects/worldedit)        |
+| LuckPerms | 26.3    | [link](https://luckperms.net/download)                   |
+| TabTPS    | 26.3    | [link](https://modrinth.com/plugin/tabtps)               |
+| CMILib    | 26.3    | [link](https://www.spigotmc.org/resources/cmilib.87610/) |
 
-Choose a set of configuration files from `./servers` to use when building and
-running the server image:
 
-```shell
-./scripts/start-docker.sh $NAME
-```
+## Group permissions
 
-Add to crontab to run on boot with `sudo crontab -e`, assuming a location of
-`/mnt/ssd/`. Make sure the desired server config is included, such as `test`:
+LuckPerms has the following permissions groups set up:
 
-```
-@reboot sleep 15 && cd /mnt/ssd/docker-minecraft && ./scripts/start-docker.sh test
-```
+* Role: `default`
+  * `bottledexp.*`
+  * `chestlock.*`
+  * `treefeller.*`
+  * `imageframe.clone`
+  * `imageframe.create`
+  * `imageframe.get`
+  * `imageframe.info`
+  * `imageframe.list`
+  * `imageframe.marker`
+  * `imageframe.refresh`
+  * `imageframe.rename`
+  * `imageframe.select`
 
-Logs will be stored in `docker-minecraft.log`.
+* Role: `managers`
+  * `minecraft.command.whitelist`
 
-## Stopping the server
-
-To safely stop the server, log in as an Op user and run the `/stop` command.
-
-If not possible, force-stop the container:
-
-```
-docker stop $NAME
-```
-
-## Backups
-
-### Local
-
-Backup manually and copy somewhere safe:
-
-```shell
-sudo ./scripts/local-backup.sh $SERVER_NAME $USER
-```
-
-Add the `local-backup.sh` script to crontab to run once a day and copy a file
-for each day of the week (7 day rolling backups), for example at 3 AM:
-
-```
-0 3 * * * cd /mnt/ssd/docker-minecraft && ./scripts/local-backup.sh test pi > /home/pi/local-backup.log 2>&1
-```
-
-### S3 Remote
-
-> Requires the AWS CLI.
-
-Upload a backup to an AWS S3 bucket that you have credentials to use:
-
-```shell
-sudo ./scripts/upload-backup.sh $SERVER_NAME $USER
-```
-
-Add to crontab for weekly backups (4AM Monday) with your AWS credentials:
-
-```
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-
-0 4 * * 1 cd /mnt/ssd/docker-minecraft && ./scripts/upload-backup.sh test pi > /home/pi/upload-backup.log 2>&1
-```
-
-## AWS Deployment
-
-![](assets/docker-minecraft-aws.drawio.png)
-
-> **Experimental**
-
-Deploy infrastructure and a Docker image to AWS. Creates a Fargate instance
-connected to an EFS filesystem, and attempts to download the latest world
-backup on launch.
-
-> For convenience, you can use `./scripts/aws/deploy.sh $SERVER_NAME`.
-
-```
-cd terraform
-
-terraform init
-terraform apply -var "server_name=test-aws"
-```
-
-Then push an image to ECR:
-
-```
-./scripts/aws/push-image.sh $SERVER_NAME
-```
-
-Wait for a task to start and get to the `RUNNING` status:
-
-```
-watch ./scripts/aws/get-tasks.sh
-```
-
-```
----------------------------------------------------------------------------------------------------------------
-|                                                DescribeTasks                                                |
-+--------------------------------------------------------------------------------------------------+----------+
-|  arn:aws:ecs:eu-west-2:617929423658:task/dkr-mc-dengie-cluster/024176ebd297426293f35a551ad32e6f  |  RUNNING |
-+--------------------------------------------------------------------------------------------------+----------+
-
-```
-
-To retrieve a backup of the world, use the script to launch a dedicated
-Fargate task and monitor the logs:
-
-```
-./scripts/aws/launch-backup-task.sh $SERVER_NAME
-```
-
-The result will be store in S3.
-
-> TODO: Compare backup file contents with manual script.
+* Role: `hosts`
+  * `minecraft.command.summon`
+  * `minecraft.command.tp`

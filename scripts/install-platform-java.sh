@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# May require 'sudo' when running outside Docker
+
 set -eu
 
 JAVA_VERSION=$1
