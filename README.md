@@ -41,11 +41,18 @@ datapacks go in `datapacks` - if you want them running, copy them to
 
 > Once running, all files changed in the container except the mounted `/world*`
 > and `servers/$SERVER_NAME/plugins` directories will be lost when the container
-> exits. Use `docker exec -t -i $CONTAINER_OR_IMAGE /bin/bash` to explore and
-> copy needed files out.
+> exits. Use `./scripts/docker-exec.sh` to explore and copy needed files out.
 
 Choose a set of configuration files from `./servers` to use when building and
-running the server image:
+running the server image.
+
+First, build or re-build the server image:
+
+```shell
+./scripts/docker-build.sh $NAME
+```
+
+Then, on each reboot run this built image to save time:
 
 ```shell
 ./scripts/start-docker.sh $NAME

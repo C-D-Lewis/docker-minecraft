@@ -16,11 +16,6 @@ JAVA_VERSION=$(cat ./servers/$SERVER_NAME/config.json | jq -r ".JAVA_VERSION")
 # Also make libraries dir in case a modded server uses it (Dockerfile expects it)
 mkdir -p world libraries
 
-# Build the image
-docker build -t $SERVER_NAME . \
-  --build-arg SERVER_NAME=$SERVER_NAME \
-  --build-arg JAVA_VERSION=$JAVA_VERSION
-
 # Run the image with exposed:
 # - Minecraft server port
 # - Dynmap port (if specified)
